@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manual de Mezcla XR18 - Rock & Metal</title>
+  <title>Manual Oficial XR18 - Patch & Mezcla en Vivo</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
     body {
@@ -28,8 +28,8 @@
         XR
       </div>
       <div>
-        <div class="text-xs font-bold text-white uppercase tracking-wider">Manual de Mezcla</div>
-        <div class="text-[10px] text-amber-400 font-mono">Phil • Poncho • Fer • Batería</div>
+        <div class="text-xs font-bold text-white uppercase tracking-wider">Manual XR18</div>
+        <div class="text-[10px] text-amber-400 font-mono">Phil • Poncho • Fer • Lalo</div>
       </div>
     </div>
     <button onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700">
@@ -40,7 +40,7 @@
   </div>
 
   <!-- Left Sidebar Navigation -->
-  <aside id="sidebar" class="hidden md:flex flex-col w-full md:w-72 bg-slate-900/95 border-r border-slate-800 p-4 space-y-6 shrink-0 md:sticky md:top-0 md:h-screen overflow-y-auto custom-scrollbar z-40">
+  <aside id="sidebar" class="hidden md:flex flex-col w-full md:w-72 bg-slate-900/95 border-r border-slate-800 p-4 space-y-5 shrink-0 md:sticky md:top-0 md:h-screen overflow-y-auto custom-scrollbar z-40">
     <!-- Brand / Console Badge -->
     <div class="border-b border-slate-800/80 pb-4">
       <div class="flex items-center gap-3">
@@ -48,84 +48,94 @@
           XR
         </div>
         <div>
-          <h2 class="text-sm font-black text-white tracking-wide uppercase">X-AIR 18 METAL</h2>
-          <span class="text-[10px] text-amber-400 font-mono block">Behringer Live Guide</span>
+          <h2 class="text-sm font-black text-white tracking-wide uppercase">X-AIR 18 LIVE</h2>
+          <span class="text-[10px] text-amber-400 font-mono block">Ruteo & Mezcla Real</span>
         </div>
       </div>
-      <div class="mt-3 text-[11px] text-slate-400 leading-tight">
-        Rock Clásico & Heavy Metal (Metallica / Iron Maiden)
+      <div class="mt-2 text-[11px] text-slate-400 leading-tight">
+        Rock Clásico & Heavy Metal (Metallica / Maiden)
       </div>
     </div>
 
     <!-- Navigation Items -->
     <div class="space-y-1.5 flex-1">
-      <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 block mb-2">Canales & Músicos</span>
+      <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 block mb-1">Ruteo de Hardware</span>
 
-      <!-- Portada -->
-      <button onclick="navigate('portada')" id="nav-portada" class="nav-btn w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all bg-amber-500 text-slate-950 shadow-md">
-        <span class="text-base">🏛️</span>
+      <!-- Portada & Patch Sheet -->
+      <button onclick="navigate('portada')" id="nav-portada" class="nav-btn w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all bg-amber-500 text-slate-950 shadow-md">
+        <span class="text-base">📋</span>
         <div class="flex-1">
-          <div class="font-bold">Portada & Setup General</div>
-          <div class="text-[10px] opacity-75">Resumen de la banda y PA</div>
+          <div class="font-bold">Mapa de Conexiones</div>
+          <div class="text-[10px] opacity-75">Patch 1-16 & Buses 1-6</div>
         </div>
       </button>
 
-      <!-- Phil -->
-      <button onclick="navigate('phil')" id="nav-phil" class="nav-btn w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80">
+      <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 block pt-3 mb-1">Canales & Músicos</span>
+
+      <!-- Phil (Ch 4 & Ch 6) -->
+      <button onclick="navigate('phil')" id="nav-phil" class="nav-btn w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80">
         <span class="text-base">🎸</span>
         <div class="flex-1">
-          <div class="font-bold text-white">Phil</div>
-          <div class="text-[10px] text-slate-400">Guitarra NAM + Voz Líder/Coros</div>
+          <div class="font-bold text-white">Phil (Ch 4 & 6)</div>
+          <div class="text-[10px] text-slate-400">Guitarra NAM + Voz | Bus 5/6</div>
         </div>
       </button>
 
-      <!-- Poncho -->
-      <button onclick="navigate('poncho')" id="nav-poncho" class="nav-btn w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80">
+      <!-- Poncho (Ch 9 & Ch 10) -->
+      <button onclick="navigate('poncho')" id="nav-poncho" class="nav-btn w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80">
         <span class="text-base">🎸</span>
         <div class="flex-1">
-          <div class="font-bold text-white">Poncho</div>
-          <div class="text-[10px] text-slate-400">Guitarra + Voz Líder/Coros</div>
+          <div class="font-bold text-white">Poncho (Ch 9 & 10)</div>
+          <div class="text-[10px] text-slate-400">Guitarra + Voz | Bus 2</div>
         </div>
       </button>
 
-      <!-- Fer -->
-      <button onclick="navigate('fer')" id="nav-fer" class="nav-btn w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80">
+      <!-- Fer (Ch 7 Bajo) -->
+      <button onclick="navigate('fer')" id="nav-fer" class="nav-btn w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80">
         <span class="text-base">⚡</span>
         <div class="flex-1">
-          <div class="font-bold text-white">Fer (Bajo)</div>
-          <div class="text-[10px] text-slate-400">Bajo + Acople Subs 18"</div>
+          <div class="font-bold text-white">Fer (Ch 7 Bajo)</div>
+          <div class="text-[10px] text-slate-400">Bajo Eléctrico + Bus 4 Subs</div>
         </div>
       </button>
 
-      <!-- Batería (1 Bombo + 2 Overheads) -->
-      <button onclick="navigate('bateria')" id="nav-bateria" class="nav-btn w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80">
+      <!-- Batería Lalo (Ch 8 & 14-15) -->
+      <button onclick="navigate('bateria')" id="nav-bateria" class="nav-btn w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80">
         <span class="text-base">🥁</span>
         <div class="flex-1">
-          <div class="font-bold text-white">Batería (3 Micros)</div>
-          <div class="text-[10px] text-slate-400">1 Mic Bombo + 2 Overheads</div>
+          <div class="font-bold text-white">Lalo (Batería)</div>
+          <div class="text-[10px] text-slate-400">Bombo Ch8, Over Ch14-15 | Bus 1</div>
         </div>
       </button>
 
-      <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 block pt-4 mb-2">Salidas & Efectos</span>
+      <!-- Jamzone (Ch 1 & 2) -->
+      <button onclick="navigate('jamzone')" id="nav-jamzone" class="nav-btn w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80">
+        <span class="text-base">📱</span>
+        <div class="flex-1">
+          <div class="font-bold text-white">Jamzone (Ch 1-2)</div>
+          <div class="text-[10px] text-slate-400">Backing Tracks Estéreo</div>
+        </div>
+      </button>
 
-      <!-- Master & Subs por Aux 6 -->
-      <button onclick="navigate('master')" id="nav-master" class="nav-btn w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80">
+      <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 block pt-3 mb-1">Monitores & Subs</span>
+
+      <!-- Buses & Subs (Bus 4) -->
+      <button onclick="navigate('buses')" id="nav-buses" class="nav-btn w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80">
         <span class="text-base">🎚️</span>
         <div class="flex-1">
-          <div class="font-bold text-white">Master & Subs (Aux 6)</div>
-          <div class="text-[10px] text-slate-400">Tops JBL, Subs 18" y FX</div>
+          <div class="font-bold text-white">Buses de Monitoreo</div>
+          <div class="text-[10px] text-slate-400">Bus 4 (Subs 18"), Bus 1, 2, 5/6</div>
         </div>
       </button>
     </div>
 
-    <!-- Footer System Status -->
-    <div class="pt-4 border-t border-slate-800/80 text-[11px] text-slate-500">
+    <!-- Live Quick Status -->
+    <div class="pt-3 border-t border-slate-800/80 text-[11px] text-slate-500">
       <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-        <span>Sistema PA</span>
-        <span class="text-emerald-400 font-mono text-[10px]">● Activo</span>
+        <span>Bus 4 Graves</span>
+        <span class="text-amber-400 font-mono text-[10px]">● Subs 18" Link</span>
       </div>
-      <div>JBL Tops + Subs 18"</div>
-      <div class="text-[10px] text-slate-600 mt-1 font-mono">Consola: Behringer XR18</div>
+      <div>Main L/R: Tops JBL</div>
     </div>
   </aside>
 
@@ -133,137 +143,232 @@
   <main class="flex-1 p-4 md:p-8 max-w-5xl overflow-y-auto custom-scrollbar">
 
     <!-- ======================================================== -->
-    <!-- SECTION 0: PORTADA BONITA Y PROFESIONAL                 -->
+    <!-- SECTION 0: PORTADA & MAPA DE PATCH EXACTO                -->
     <!-- ======================================================== -->
     <section id="section-portada" class="section-content space-y-6">
-      <!-- Hero Banner Rock / Metal Style -->
-      <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-amber-950/40 border border-amber-500/30 p-6 md:p-10 shadow-2xl">
-        <div class="absolute -right-10 -bottom-10 opacity-10 text-[180px] font-black pointer-events-none select-none text-amber-400">
+      <!-- Hero Banner -->
+      <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-amber-950/40 border border-amber-500/30 p-6 md:p-8 shadow-2xl">
+        <div class="absolute -right-8 -bottom-8 opacity-10 text-[160px] font-black pointer-events-none select-none text-amber-400">
           XR18
         </div>
-        <div class="relative z-10 space-y-4">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30">
-            <span>🔥</span> MANUAL OFICIAL DE CALIBRACIÓN EN VIVO
+        <div class="relative z-10 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30">
+            <span>🎸</span> MANUAL DE MEZCLA Y RUTEO EXACTO
           </div>
-          <h1 class="text-3xl md:text-5xl font-black text-white tracking-tight uppercase">
-            Heavy Rock & Metal <br>
-            <span class="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">Mezcla XR18</span>
+          <h1 class="text-2xl md:text-4xl font-black text-white tracking-tight uppercase">
+            Patch Oficial de la Banda <br>
+            <span class="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">Behringer XR18</span>
           </h1>
-          <p class="text-sm md:text-base text-slate-300 max-w-2xl leading-relaxed">
-            Guía de ajuste rápido diseñada exclusivamente para tu banda de 4 integrantes: voces balanceadas en directo, guitarras modeladas con <strong>NAM</strong> con pegada orgánica sin avispero, bajo estilo Steve Harris y la técnica de <strong>3 micrófonos para batería</strong> a través de tus subwoofers de 18" y bocinas JBL.
+          <p class="text-xs md:text-sm text-slate-300 max-w-2xl leading-relaxed">
+            Configuración exacta de tus entradas físicas <strong>(Ch 1 al 15)</strong>, el sistema de <strong>Subwoofers en cadena por Bus 4</strong>, mezclas de monitoreo independientes para <strong>Lalo (Batería)</strong>, <strong>Poncho</strong>, <strong>Phil & Hermano (Estéreo)</strong> y el balance de pistas <strong>Jamzone</strong>.
           </p>
-
-          <div class="pt-2 flex flex-wrap gap-3">
-            <button onclick="navigate('phil')" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20">
-              Comenzar con Phil & Poncho →
-            </button>
-            <button onclick="navigate('bateria')" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider border border-slate-700 transition-all">
-              Batería (1 Bombo + 2 Overheads)
-            </button>
-          </div>
         </div>
       </div>
 
-      <!-- Lineup Cards (Integrantes) -->
-      <div>
-        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Integrantes & Roles en Consola</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <!-- Phil -->
-          <div onclick="navigate('phil')" class="cursor-pointer group bg-slate-900/80 hover:bg-slate-900 border border-slate-800 hover:border-amber-500/40 p-4 rounded-2xl transition-all shadow-sm">
-            <div class="flex items-center justify-between mb-3">
-              <span class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-lg">🎸</span>
-              <span class="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">NAM Digital</span>
-            </div>
-            <h4 class="text-base font-black text-white group-hover:text-amber-400 transition-colors">Phil</h4>
-            <div class="text-xs text-slate-300 font-semibold mt-0.5">Guitarra & Voz</div>
-            <p class="text-[11px] text-slate-400 mt-2 leading-snug">
-              Alterna voz líder/coros. Guitarra directa con perfiles NAM (corte de avispero a 6.8 kHz).
-            </p>
+      <!-- Complete Input Patch Sheet Table -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div>
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span>🔌</span> Ruteo de Entradas (Inputs 1 - 16)
+            </h3>
+            <p class="text-xs text-slate-400">Asignación física de cada cable conectado en tu XR18.</p>
           </div>
+          <span class="text-xs font-mono bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-1 rounded-lg">
+            10 Canales Activos
+          </span>
+        </div>
 
-          <!-- Poncho -->
-          <div onclick="navigate('poncho')" class="cursor-pointer group bg-slate-900/80 hover:bg-slate-900 border border-slate-800 hover:border-amber-500/40 p-4 rounded-2xl transition-all shadow-sm">
-            <div class="flex items-center justify-between mb-3">
-              <span class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-lg">🎸</span>
-              <span class="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Pedalera</span>
-            </div>
-            <h4 class="text-base font-black text-white group-hover:text-amber-400 transition-colors">Poncho</h4>
-            <div class="text-xs text-slate-300 font-semibold mt-0.5">Guitarra & Voz</div>
-            <p class="text-[11px] text-slate-400 mt-2 leading-snug">
-              Alterna voz líder/coros. Muro de guitarras rítmicas paneadas para dejar libre el centro.
-            </p>
-          </div>
-
-          <!-- Fer -->
-          <div onclick="navigate('fer')" class="cursor-pointer group bg-slate-900/80 hover:bg-slate-900 border border-slate-800 hover:border-cyan-500/40 p-4 rounded-2xl transition-all shadow-sm">
-            <div class="flex items-center justify-between mb-3">
-              <span class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-lg">⚡</span>
-              <span class="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded">Subs 18"</span>
-            </div>
-            <h4 class="text-base font-black text-white group-hover:text-cyan-400 transition-colors">Fer</h4>
-            <div class="text-xs text-slate-300 font-semibold mt-0.5">Bajo Eléctrico</div>
-            <p class="text-[11px] text-slate-400 mt-2 leading-snug">
-              Conexión directa. Ataque a 2.5 kHz estilo Steve Harris y hueco en 65 Hz para el bombo.
-            </p>
-          </div>
-
-          <!-- Batería -->
-          <div onclick="navigate('bateria')" class="cursor-pointer group bg-slate-900/80 hover:bg-slate-900 border border-slate-800 hover:border-emerald-500/40 p-4 rounded-2xl transition-all shadow-sm">
-            <div class="flex items-center justify-between mb-3">
-              <span class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-lg">🥁</span>
-              <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">3 Mic Kit</span>
-            </div>
-            <h4 class="text-base font-black text-white group-hover:text-emerald-400 transition-colors">Batería</h4>
-            <div class="text-xs text-slate-300 font-semibold mt-0.5">Base Rítmica</div>
-            <p class="text-[11px] text-slate-400 mt-2 leading-snug">
-              1 Micrófono en Bombo + 2 Overheads estratégicos para captar caja, toms y platos en vivo.
-            </p>
-          </div>
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full text-xs text-left border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 text-slate-400 uppercase font-semibold">
+                <th class="py-2.5 px-3">Canal</th>
+                <th class="py-2.5 px-3">Fuente / Instrumento</th>
+                <th class="py-2.5 px-3">Integrante</th>
+                <th class="py-2.5 px-3">Tipo de Entrada</th>
+                <th class="py-2.5 px-3">Envío a Bus 4 (Subs 18")</th>
+                <th class="py-2.5 px-3">Paneo Main L/R</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-2 px-3 font-mono font-bold text-amber-400">CH 01</td>
+                <td class="py-2 px-3 font-semibold text-white">Jamzone Backing Track L</td>
+                <td class="py-2 px-3 text-slate-400">Pistas iPad/PC</td>
+                <td class="py-2 px-3 font-mono text-slate-400">Línea / DI</td>
+                <td class="py-2 px-3 text-slate-500 font-mono">0 dB (Sutil si trae bajo)</td>
+                <td class="py-2 px-3 text-emerald-400 font-bold">L 100% (Link Ch2)</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-2 px-3 font-mono font-bold text-amber-400">CH 02</td>
+                <td class="py-2 px-3 font-semibold text-white">Jamzone Backing Track R</td>
+                <td class="py-2 px-3 text-slate-400">Pistas iPad/PC</td>
+                <td class="py-2 px-3 font-mono text-slate-400">Línea / DI</td>
+                <td class="py-2 px-3 text-slate-500 font-mono">0 dB (Sutil si trae bajo)</td>
+                <td class="py-2 px-3 text-emerald-400 font-bold">R 100% (Link Ch1)</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30 bg-slate-950/40">
+                <td class="py-2 px-3 font-mono font-bold text-amber-400">CH 04</td>
+                <td class="py-2 px-3 font-semibold text-amber-300">Guitarra Eléctrica (NAM)</td>
+                <td class="py-2 px-3 text-amber-400 font-semibold">Phil</td>
+                <td class="py-2 px-3 font-mono text-slate-400">Modelador NAM</td>
+                <td class="py-2 px-3 text-rose-400 font-semibold">MUTE / Cero</td>
+                <td class="py-2 px-3 text-amber-300 font-bold">L 65%</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30 bg-slate-950/40">
+                <td class="py-2 px-3 font-mono font-bold text-amber-400">CH 06</td>
+                <td class="py-2 px-3 font-semibold text-amber-300">Micrófono de Voz</td>
+                <td class="py-2 px-3 text-amber-400 font-semibold">Phil</td>
+                <td class="py-2 px-3 font-mono text-slate-400">Mic XLR (Líder/Coros)</td>
+                <td class="py-2 px-3 text-rose-400 font-semibold">MUTE / Cero</td>
+                <td class="py-2 px-3 text-white font-bold">Centro (C)</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-2 px-3 font-mono font-bold text-cyan-400">CH 07</td>
+                <td class="py-2 px-3 font-semibold text-cyan-300">Bajo Eléctrico</td>
+                <td class="py-2 px-3 text-cyan-400 font-semibold">Fer</td>
+                <td class="py-2 px-3 font-mono text-slate-400">Línea / Pedalera</td>
+                <td class="py-2 px-3 text-emerald-400 font-bold">SÍ (0 dB a Bus 4)</td>
+                <td class="py-2 px-3 text-white font-bold">Centro (C)</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-2 px-3 font-mono font-bold text-emerald-400">CH 08</td>
+                <td class="py-2 px-3 font-semibold text-emerald-300">Micrófono Bombo (Kick)</td>
+                <td class="py-2 px-3 text-emerald-400 font-semibold">Lalo (Batería)</td>
+                <td class="py-2 px-3 font-mono text-slate-400">Mic Dinámico XLR</td>
+                <td class="py-2 px-3 text-emerald-400 font-bold">SÍ (+2 dB a Bus 4)</td>
+                <td class="py-2 px-3 text-white font-bold">Centro (C)</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30 bg-slate-950/40">
+                <td class="py-2 px-3 font-mono font-bold text-amber-400">CH 09</td>
+                <td class="py-2 px-3 font-semibold text-purple-300">Micrófono de Voz</td>
+                <td class="py-2 px-3 text-purple-400 font-semibold">Poncho</td>
+                <td class="py-2 px-3 font-mono text-slate-400">Mic XLR (Líder/Coros)</td>
+                <td class="py-2 px-3 text-rose-400 font-semibold">MUTE / Cero</td>
+                <td class="py-2 px-3 text-white font-bold">Centro (C)</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30 bg-slate-950/40">
+                <td class="py-2 px-3 font-mono font-bold text-amber-400">CH 10</td>
+                <td class="py-2 px-3 font-semibold text-purple-300">Guitarra Eléctrica</td>
+                <td class="py-2 px-3 text-purple-400 font-semibold">Poncho</td>
+                <td class="py-2 px-3 font-mono text-slate-400">Pedalera / Amp DI</td>
+                <td class="py-2 px-3 text-rose-400 font-semibold">MUTE / Cero</td>
+                <td class="py-2 px-3 text-purple-300 font-bold">R 65%</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-2 px-3 font-mono font-bold text-emerald-400">CH 14</td>
+                <td class="py-2 px-3 font-semibold text-emerald-300">Overhead Izquierdo (OH-L)</td>
+                <td class="py-2 px-3 text-emerald-400 font-semibold">Lalo (Batería)</td>
+                <td class="py-2 px-3 font-mono text-slate-400">Condenser (+48V)</td>
+                <td class="py-2 px-3 text-rose-400 font-semibold">MUTE / Cero</td>
+                <td class="py-2 px-3 text-emerald-300 font-bold">L 75%</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30">
+                <td class="py-2 px-3 font-mono font-bold text-emerald-400">CH 15</td>
+                <td class="py-2 px-3 font-semibold text-emerald-300">Overhead Derecho (OH-R)</td>
+                <td class="py-2 px-3 text-emerald-400 font-semibold">Lalo (Batería)</td>
+                <td class="py-2 px-3 font-mono text-slate-400">Condenser (+48V)</td>
+                <td class="py-2 px-3 text-rose-400 font-semibold">MUTE / Cero</td>
+                <td class="py-2 px-3 text-emerald-300 font-bold">R 75%</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <!-- PA System Hardware Overview -->
-      <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 space-y-3">
-        <h3 class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2">
-          <span>⚙️</span> Configuración de Equipo & Salidas Físicas XR18
-        </h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
-          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80">
-            <span class="text-amber-400 font-bold block mb-1">Tops JBL (15" / 12")</span>
-            <p class="text-slate-300">Conectados a <strong>Main L / R</strong>. Reproducen voces, guitarras, el ataque del bajo y los platos/caja.</p>
+      <!-- Output Routing Table (Buses & Main) -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div>
+            <h3 class="text-base font-bold text-white flex items-center gap-2">
+              <span>🔊</span> Salidas Físicas (Buses Auxiliares & Main L/R)
+            </h3>
+            <p class="text-xs text-slate-400">Destino de cada uno de los 6 envíos físicos XLR de tu consola.</p>
           </div>
-          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80">
-            <span class="text-amber-400 font-bold block mb-1">Subwoofers 18" (JBL)</span>
-            <p class="text-slate-300">Conectados a <strong>Aux 6 (Bus 6)</strong>. Solo reciben Bombo y Bajo, protegiendo las voces de acoples graves.</p>
+          <span class="text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-lg">
+            Sistema Calibrado
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <!-- Bus 1 -->
+          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+            <div class="flex justify-between items-center mb-1">
+              <span class="text-amber-400 font-mono font-bold">AUX 1 (BUS 1)</span>
+              <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Mono</span>
+            </div>
+            <div class="font-bold text-white text-sm">Monitoreo de Lalo (Batería)</div>
+            <p class="text-slate-400 mt-1">Mezcla prioritaria: Jamzone (click y secuencias), Bajo de Fer y voces.</p>
           </div>
-          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800/80">
-            <span class="text-amber-400 font-bold block mb-1">Modeladores & NAM</span>
-            <p class="text-slate-300">Entrada directa a canales Hi-Z o cajas directas. Filtro LPF obligatorio en 6.8 kHz.</p>
+
+          <!-- Bus 2 -->
+          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+            <div class="flex justify-between items-center mb-1">
+              <span class="text-amber-400 font-mono font-bold">AUX 2 (BUS 2)</span>
+              <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Mono</span>
+            </div>
+            <div class="font-bold text-white text-sm">Monitoreo de Poncho</div>
+            <p class="text-slate-400 mt-1">Mezcla de guitarra Poncho (Ch 10), su voz (Ch 9) y referencia de Phil.</p>
+          </div>
+
+          <!-- Bus 4 - SUBS -->
+          <div class="bg-slate-950 p-3.5 rounded-xl border border-amber-500/40 bg-amber-500/5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="text-amber-400 font-mono font-bold">AUX 4 (BUS 4)</span>
+              <span class="text-[10px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-bold">SUBWOOFERS 18"</span>
+            </div>
+            <div class="font-bold text-white text-sm">Salida hacia Subwoofers en Cadena (Daisy-Chain)</div>
+            <p class="text-slate-300 mt-1 leading-relaxed">
+              Sale a la entrada del primer Subwoofer de 18", y de su salida (Thru/Link) alimenta al segundo sub.
+              <br>
+              <strong class="text-amber-400">¡Solo enviar Bombo (Ch 8) y Bajo (Ch 7)!</strong>
+            </p>
+          </div>
+
+          <!-- Bus 5 y 6 -->
+          <div class="bg-slate-950 p-3.5 rounded-xl border border-cyan-500/40">
+            <div class="flex justify-between items-center mb-1">
+              <span class="text-cyan-400 font-mono font-bold">AUX 5 & 6 (BUS 5/6)</span>
+              <span class="text-[10px] bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded font-bold">Stereo Link</span>
+            </div>
+            <div class="font-bold text-white text-sm">Monitoreo Estéreo de Phil & Hermano</div>
+            <p class="text-slate-400 mt-1">In-Ears / Monitores con imagen estéreo real: Guitarras paneadas L/R y pistas Jamzone en estéreo.</p>
+          </div>
+
+          <!-- Main L/R -->
+          <div class="md:col-span-2 bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+            <div class="flex justify-between items-center mb-1">
+              <span class="text-emerald-400 font-mono font-bold">MAIN L / MAIN R</span>
+              <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-bold">P.A. Principal</span>
+            </div>
+            <div class="font-bold text-white text-sm">Tops JBL Principales</div>
+            <p class="text-slate-400 mt-1">Conectados directo a tus bocinas aéreas JBL. Reproducen toda la mezcla con claridad arriba de 90 Hz.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ======================================================== -->
-    <!-- SECTION 1: PHIL (GUITARRA NAM + VOZ)                     -->
+    <!-- SECTION 1: PHIL (CANALES 4 & 6)                          -->
     <!-- ======================================================== -->
     <section id="section-phil" class="section-content hidden space-y-6">
       <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-5">
         <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
           <div>
-            <div class="inline-flex items-center gap-1 text-[11px] text-amber-400 font-mono font-semibold">CANAL PHIL • XR18</div>
-            <h2 class="text-2xl font-black text-white">Phil: Guitarra con NAM & Micrófono</h2>
-            <p class="text-xs text-slate-400 mt-0.5">Optimización de perfiles NAM y calibración de micrófono cuando canta Líder vs Coros.</p>
+            <div class="inline-flex items-center gap-1 text-[11px] text-amber-400 font-mono font-semibold">PHIL • INPUTS 4 & 6 • MONITOREO BUS 5/6</div>
+            <h2 class="text-2xl font-black text-white">Phil: Guitarra NAM (Ch 4) & Micrófono (Ch 6)</h2>
+            <p class="text-xs text-slate-400 mt-0.5">Control de sonido high-gain digital y presencia de voz líder vs coros.</p>
           </div>
           <div class="flex gap-2">
             <button onclick="setPhilView('guitar')" id="btn-phil-guitar" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-slate-950">
-              🎸 Guitarra NAM
+              🎸 Guitarra NAM (Ch 4)
             </button>
             <button onclick="setPhilView('voice-lead')" id="btn-phil-lead" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-800 text-slate-300">
-              🎤 Voz LÍDER
+              🎤 Voz LÍDER (Ch 6)
             </button>
             <button onclick="setPhilView('voice-back')" id="btn-phil-back" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-800 text-slate-300">
-              👥 Voz CORO
+              👥 Voz CORO (Ch 6)
             </button>
           </div>
         </div>
@@ -272,9 +377,9 @@
         <div class="bg-slate-950 border border-slate-800 rounded-xl p-3">
           <div class="flex justify-between items-center mb-2 px-1">
             <span id="philCanvasLabel" class="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">
-              Curva XR18: Guitarra NAM (Filtro Anti-Avispa & Punch)
+              Curva XR18 Ch 4: Guitarra NAM Phil (Filtro Anti-Avispa 6.8 kHz)
             </span>
-            <span class="text-[11px] text-slate-500 font-mono">Paramétrico 4-Bandas</span>
+            <span class="text-[11px] text-slate-500 font-mono">PEQ 4-Bandas</span>
           </div>
           <canvas id="canvasPhil" width="800" height="220" class="w-full h-48 rounded-lg bg-slate-950"></canvas>
         </div>
@@ -297,26 +402,23 @@
           </table>
         </div>
 
-        <!-- Phil's Specific Mix Card -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-            <h4 class="text-xs font-bold text-amber-400 uppercase mb-2">Truco para el Modelador NAM de Phil</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Los impulsos (IR) de guitarra digital suelen sonar perfectos en audífonos pero en directo con bocinas JBL pueden sonar ásperos o con exceso de graves en el *palm-muting*:
-              <br><br>
-              • <strong>Paneo de Phil:</strong> <strong>L65%</strong> en el estéreo.
-              <br>
-              • <strong>Filtro High-Cut (LPF):</strong> Ponlo en <strong>6.8 kHz</strong>. Los conos de guitarra real no reproducen nada por encima de eso; eliminarás todo el zumbido digital sin perder brillo en los solos.
-            </p>
+            <h4 class="text-xs font-bold text-amber-400 uppercase mb-2">Canal 4: Paneo & Salida a Subs</h4>
+            <ul class="text-xs space-y-1.5 text-slate-300">
+              <li>• <strong>Paneo Main L/R:</strong> Poner en <strong>L 65%</strong> para hacer pareja con Poncho (R 65%).</li>
+              <li>• <strong>Envío a Bus 4 (Subwoofers):</strong> <strong class="text-rose-400">Totalmente cerrado (Cero)</strong>. La guitarra no debe ensuciar los subs de 18".</li>
+              <li>• <strong>Filtro High-Cut (LPF):</strong> Activo en <strong>6.8 kHz</strong> para domar el sonido rasposo del modelador NAM en los agudos de los tops JBL.</li>
+            </ul>
           </div>
           <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-            <h4 class="text-xs font-bold text-amber-400 uppercase mb-2">Split de Voz de Phil en XR18</h4>
+            <h4 class="text-xs font-bold text-cyan-400 uppercase mb-2">Monitoreo Phil & Hermano (Bus 5/6 Estéreo)</h4>
             <p class="text-xs text-slate-300 leading-relaxed">
-              Rutea el micro de Phil a <strong>Canal 1 (Phil Lead)</strong> y <strong>Canal 2 (Phil Coros)</strong>:
+              Como el Bus 5 y 6 está vinculado en <strong>Stereo Link</strong>:
               <br><br>
-              • Cuando cante la voz principal: Mutea Ch 2 y activa Ch 1 (brilla en 3.5 kHz al frente).
+              • Escuchas tu guitarra (Ch 4) a la izquierda y la de Poncho (Ch 10) a la derecha.
               <br>
-              • Cuando cante coros para Poncho: Mutea Ch 1 y activa Ch 2 (aplica el recorte de tu libro a 3 kHz y 250 Hz, quedándose detrás).
+              • Las pistas de <strong>Jamzone (Ch 1 y 2)</strong> se escuchan con su paneo estéreo original perfecto, brindando sensación de directo profesional.
             </p>
           </div>
         </div>
@@ -324,25 +426,25 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- SECTION 2: PONCHO (GUITARRA & VOZ)                       -->
+    <!-- SECTION 2: PONCHO (CANALES 9 & 10)                       -->
     <!-- ======================================================== -->
     <section id="section-poncho" class="section-content hidden space-y-6">
       <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-5">
         <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
           <div>
-            <div class="inline-flex items-center gap-1 text-[11px] text-amber-400 font-mono font-semibold">CANAL PONCHO • XR18</div>
-            <h2 class="text-2xl font-black text-white">Poncho: Guitarra & Micrófono</h2>
-            <p class="text-xs text-slate-400 mt-0.5">Complemento estéreo con Phil para crear el muro de sonido Iron Maiden / Metallica.</p>
+            <div class="inline-flex items-center gap-1 text-[11px] text-purple-400 font-mono font-semibold">PONCHO • INPUTS 9 & 10 • MONITOREO BUS 2</div>
+            <h2 class="text-2xl font-black text-white">Poncho: Voz (Ch 9) & Guitarra (Ch 10)</h2>
+            <p class="text-xs text-slate-400 mt-0.5">Muro de guitarras en estéreo complementando a Phil y salida a su monitor auxiliar 2.</p>
           </div>
           <div class="flex gap-2">
             <button onclick="setPonchoView('guitar')" id="btn-poncho-guitar" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-slate-950">
-              🎸 Guitarra Poncho
+              🎸 Guitarra Poncho (Ch 10)
             </button>
             <button onclick="setPonchoView('voice-lead')" id="btn-poncho-lead" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-800 text-slate-300">
-              🎤 Voz LÍDER
+              🎤 Voz LÍDER (Ch 9)
             </button>
             <button onclick="setPonchoView('voice-back')" id="btn-poncho-back" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-800 text-slate-300">
-              👥 Voz CORO
+              👥 Voz CORO (Ch 9)
             </button>
           </div>
         </div>
@@ -351,9 +453,9 @@
         <div class="bg-slate-950 border border-slate-800 rounded-xl p-3">
           <div class="flex justify-between items-center mb-2 px-1">
             <span id="ponchoCanvasLabel" class="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">
-              Curva XR18: Guitarra Poncho (Paneo R65% - Muro Estéreo)
+              Curva XR18 Ch 10: Guitarra Poncho (Paneo R 65%)
             </span>
-            <span class="text-[11px] text-slate-500 font-mono">Ecualizador PEQ</span>
+            <span class="text-[11px] text-slate-500 font-mono">PEQ</span>
           </div>
           <canvas id="canvasPoncho" width="800" height="220" class="w-full h-48 rounded-lg bg-slate-950"></canvas>
         </div>
@@ -377,25 +479,23 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-            <h4 class="text-xs font-bold text-amber-400 uppercase mb-2">Diferenciación de Tono entre Phil y Poncho</h4>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Si ambas guitarras tienen la misma ecualización exacta, se empastan y suenan como una sola guitarra borrosa:
-              <br><br>
-              • <strong>Phil (L65%):</strong> Énfasis en <strong>1.2 kHz</strong> (más mordida y agresividad).
-              <br>
-              • <strong>Poncho (R65%):</strong> Énfasis en <strong>850 Hz</strong> (más cuerpo y grosor rítmico).
-              <br>
-              Al sonar juntas en estéreo, la banda suena el doble de ancha y cada uno se distingue con claridad.
-            </p>
+            <h4 class="text-xs font-bold text-purple-400 uppercase mb-2">Canal 10 (Guitarra): Paneo & Ruteo</h4>
+            <ul class="text-xs space-y-1.5 text-slate-300">
+              <li>• <strong>Paneo Main L/R:</strong> Ponlo en <strong>R 65%</strong>. Al estar Phil en L65%, se crea el sonido ancho y épico de Iron Maiden.</li>
+              <li>• <strong>Cuerpo en 850 Hz:</strong> +2.5 dB para que Poncho tenga más grosor rítmico frente al tono afilado de Phil en 1.2 kHz.</li>
+              <li>• <strong>Bus 4 (Subs):</strong> En Cero / Muteado.</li>
+            </ul>
           </div>
           <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-            <h4 class="text-xs font-bold text-amber-400 uppercase mb-2">Split de Voz de Poncho en XR18</h4>
+            <h4 class="text-xs font-bold text-purple-400 uppercase mb-2">Bus 2: Monitor Exclusivo de Poncho</h4>
             <p class="text-xs text-slate-300 leading-relaxed">
-              Rutea el micro de Poncho a <strong>Canal 3 (Poncho Lead)</strong> y <strong>Canal 4 (Poncho Coros)</strong>:
+              En la mezcla del <strong>Bus 2</strong>:
               <br><br>
-              • En las rolas donde Poncho canta la principal: Ch 3 fader arriba a 0 dB, compresor activo y reverb Plate con pre-delay de 25ms.
+              • Sube con prioridad su voz (Ch 9) y su guitarra (Ch 10).
               <br>
-              • En las rolas donde canta Phil: Poncho pasa a Ch 4 con -3 dB de volumen, corte en 3 kHz y paneado R25%.
+              • Pon un nivel moderado de la voz de Phil (Ch 6) para escuchar coros y órdenes de las canciones.
+              <br>
+              • Agrega referencia del bombo (Ch 8) y bajo de Fer (Ch 7) para sincronía en los ritmos.
             </p>
           </div>
         </div>
@@ -403,23 +503,23 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- SECTION 3: FER (BAJO + SUBS 18")                        -->
+    <!-- SECTION 3: FER (CANAL 7 BAJO)                            -->
     <!-- ======================================================== -->
     <section id="section-fer" class="section-content hidden space-y-6">
       <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-5">
         <div class="border-b border-slate-800 pb-4">
-          <div class="inline-flex items-center gap-1 text-[11px] text-cyan-400 font-mono font-semibold">CANAL FER • BAJO ELÉCTRICO</div>
-          <h2 class="text-2xl font-black text-white">Fer: Bajo & Acoplamiento con Subwoofers de 18"</h2>
-          <p class="text-xs text-slate-400 mt-0.5">El pegamento rítmico que hace vibrar el pecho con claridad melódica.</p>
+          <div class="inline-flex items-center gap-1 text-[11px] text-cyan-400 font-mono font-semibold">FER • INPUT 7 • ALIMENTACIÓN A BUS 4 (SUBS 18")</div>
+          <h2 class="text-2xl font-black text-white">Fer: Bajo Eléctrico (Ch 7) & Subwoofers de 18"</h2>
+          <p class="text-xs text-slate-400 mt-0.5">El enlace armónico que hace tronar el pecho en conjunto con el bombo de Lalo.</p>
         </div>
 
         <!-- Canvas EQ Fer -->
         <div class="bg-slate-950 border border-slate-800 rounded-xl p-3">
           <div class="flex justify-between items-center mb-2 px-1">
             <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider font-mono">
-              Curva XR18: Bajo Eléctrico (Ataque 2.5 kHz + Hueco 65 Hz para Bombo)
+              Curva XR18 Ch 7: Bajo Eléctrico (Ataque 2.5 kHz + Hueco 65 Hz)
             </span>
-            <span class="text-[11px] text-slate-500 font-mono">4 Bandas Paramétricas</span>
+            <span class="text-[11px] text-slate-500 font-mono">PEQ 4-Bandas</span>
           </div>
           <canvas id="canvasFer" width="800" height="220" class="w-full h-48 rounded-lg bg-slate-950"></canvas>
         </div>
@@ -435,73 +535,76 @@
                 <th class="py-2.5 px-3">Explicación técnica</th>
               </tr>
             </thead>
-            <tbody id="ferTableBody" class="divide-y divide-slate-800/60 text-slate-300">
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
               <tr>
                 <td class="py-2 px-3 font-semibold text-cyan-400">Low Cut (HPF)</td>
                 <td class="py-2 px-3 font-mono">40 Hz</td>
                 <td class="py-2 px-3 text-rose-400 font-semibold">18 dB/oct</td>
                 <td class="py-2 px-3">-</td>
-                <td class="py-2 px-3">Protege los conos de 18" de vibraciones inaudibles que consumen energía del amplificador.</td>
+                <td class="py-2 px-3">Protege las bobinas de los subs de 18" de sobrecalentamiento con frecuencias inaudibles.</td>
               </tr>
               <tr>
                 <td class="py-2 px-3 font-semibold text-cyan-400">Banda 1 (Hueco Bombo)</td>
                 <td class="py-2 px-3 font-mono">65 Hz</td>
                 <td class="py-2 px-3 text-rose-400 font-semibold">-3.5 dB</td>
                 <td class="py-2 px-3 font-mono">1.8</td>
-                <td class="py-2 px-3"><strong>¡Vital!</strong> Deja esta frecuencia libre para el golpe del bombo. Evita la bola grave.</td>
+                <td class="py-2 px-3"><strong>¡Vital!</strong> Deja esta frecuencia libre para el golpe del bombo de Lalo (Ch 8).</td>
               </tr>
               <tr>
                 <td class="py-2 px-3 font-semibold text-cyan-400">Banda 2 (Cuerpo Bajo)</td>
                 <td class="py-2 px-3 font-mono">120 Hz</td>
                 <td class="py-2 px-3 text-emerald-400 font-semibold">+2.5 dB</td>
                 <td class="py-2 px-3 font-mono">1.4</td>
-                <td class="py-2 px-3">La nota fundamental del bajo. Llena la sala de peso cálido y redondo.</td>
+                <td class="py-2 px-3">La nota redonda del bajo. Se siente sólida tanto en los subs como en los tops JBL.</td>
               </tr>
               <tr>
                 <td class="py-2 px-3 font-semibold text-cyan-400">Banda 3 (Corte Caja)</td>
                 <td class="py-2 px-3 font-mono">450 Hz</td>
                 <td class="py-2 px-3 text-rose-400 font-semibold">-3.0 dB</td>
                 <td class="py-2 px-3 font-mono">1.5</td>
-                <td class="py-2 px-3">Zona "acartonada". Limpia la suciedad para que las guitarras respiren.</td>
+                <td class="py-2 px-3">Limpia la opacidad para que las guitarras de Phil y Poncho respiren.</td>
               </tr>
               <tr>
                 <td class="py-2 px-3 font-semibold text-cyan-400">Banda 4 (Steve Harris)</td>
                 <td class="py-2 px-3 font-mono">2.5 kHz</td>
                 <td class="py-2 px-3 text-emerald-400 font-semibold">+3.5 dB</td>
                 <td class="py-2 px-3 font-mono">1.6</td>
-                <td class="py-2 px-3"><strong>El clank metálico característico del heavy metal.</strong> Hace que las líneas de bajo se entiendan claramente en los tops JBL.</td>
+                <td class="py-2 px-3"><strong>Ataque metálico Maiden:</strong> Hace que cada nota se entienda claramente en las bocinas de arriba.</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="bg-cyan-500/10 border border-cyan-500/30 p-4 rounded-xl">
-          <h4 class="text-xs font-bold text-cyan-300 uppercase mb-1">Compresor XR18 para Fer</h4>
+        <div class="p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/30">
+          <h4 class="text-xs font-bold text-cyan-300 uppercase mb-1">Ruteo de Fer hacia el Bus 4 (Subwoofers 18")</h4>
           <p class="text-xs text-slate-300 leading-relaxed">
-            • <strong>Threshold:</strong> Ajusta para que comprima entre <strong>-4 dB y -6 dB</strong> en las notas más firmes.<br>
-            • <strong>Ratio:</strong> 4:1 o 5:1 | <strong>Attack:</strong> 30 ms (para no matar el ataque de la púa o el dedo) | <strong>Release:</strong> 120 ms.
+            En la pantalla de envíos de la XR18 para el <strong>Canal 7 (Bajo)</strong>:
+            <br>
+            • Pon el envío a <strong>Bus 4 en 0 dB</strong> (Post-Fader).
+            <br>
+            • Así, cada vez que muevas el volumen general de Fer en el fader principal, su presencia en los subwoofers subirá o bajará de forma completamente proporcional.
           </p>
         </div>
       </div>
     </section>
 
     <!-- ======================================================== -->
-    <!-- SECTION 4: BATERÍA (1 BOMBO + 2 OVERHEADS)               -->
+    <!-- SECTION 4: LALO - BATERÍA (CANALES 8 & 14-15)            -->
     <!-- ======================================================== -->
     <section id="section-bateria" class="section-content hidden space-y-6">
       <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-5">
         <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
           <div>
-            <div class="inline-flex items-center gap-1 text-[11px] text-emerald-400 font-mono font-semibold">SETUP DE 3 MICRÓFONOS • BATERÍA</div>
-            <h2 class="text-2xl font-black text-white">Batería: 1 Mic en Bombo + 2 Overheads</h2>
-            <p class="text-xs text-slate-400 mt-0.5">La técnica más limpia y contundente para directo: sin peleas de fase ni sangrado excesivo.</p>
+            <div class="inline-flex items-center gap-1 text-[11px] text-emerald-400 font-mono font-semibold">LALO • KICK CH 8 • OVERHEADS CH 14 & 15 • MONITOR BUS 1</div>
+            <h2 class="text-2xl font-black text-white">Lalo: Batería (3 Micrófonos) & Monitor Bus 1</h2>
+            <p class="text-xs text-slate-400 mt-0.5">Pegada bestial en el bombo hacia los subs de 18" y captura estereofónica con 2 aéreos.</p>
           </div>
           <div class="flex gap-2">
             <button onclick="setDrumView('kick')" id="btn-drum-kick" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 text-white">
-              🥁 1. Mic Bombo (Kick)
+              🥁 Bombo (Ch 8)
             </button>
             <button onclick="setDrumView('overheads')" id="btn-drum-oh" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-800 text-slate-300">
-              ✨ 2. Overheads L/R
+              ✨ Overheads (Ch 14 & 15)
             </button>
           </div>
         </div>
@@ -510,9 +613,9 @@
         <div class="bg-slate-950 border border-slate-800 rounded-xl p-3">
           <div class="flex justify-between items-center mb-2 px-1">
             <span id="drumCanvasLabel" class="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
-              Curva XR18: Micrófono de Bombo (Kick Heavy Metal)
+              Curva XR18 Ch 8: Bombo de Lalo (Subgrave 60 Hz + Clic 4 kHz)
             </span>
-            <span class="text-[11px] text-slate-500 font-mono">Subgrave 18" + Clic 4kHz</span>
+            <span class="text-[11px] text-slate-500 font-mono">PEQ</span>
           </div>
           <canvas id="canvasDrum" width="800" height="220" class="w-full h-48 rounded-lg bg-slate-950"></canvas>
         </div>
@@ -525,7 +628,7 @@
                 <th class="py-2.5 px-3">Frecuencia</th>
                 <th class="py-2.5 px-3">Ajuste</th>
                 <th class="py-2.5 px-3">Q</th>
-                <th class="py-2.5 px-3">Función con tus bocinas JBL</th>
+                <th class="py-2.5 px-3">Efecto en los Subs 18" y Tops JBL</th>
               </tr>
             </thead>
             <tbody id="drumTableBody" class="divide-y divide-slate-800/60 text-slate-300">
@@ -534,31 +637,26 @@
           </table>
         </div>
 
-        <!-- 3-Mic Drum Technique Guide -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-            <h4 class="text-xs font-bold text-emerald-400 uppercase mb-2">¿Cómo captar tarola y toms con solo 2 Overheads?</h4>
+            <h4 class="text-xs font-bold text-emerald-400 uppercase mb-2">Canal 8 (Bombo) hacia Bus 4 (Subs 18")</h4>
             <p class="text-xs text-slate-300 leading-relaxed">
-              Con el método **Glyn Johns** o **Recorderman**:
-              <br><br>
-              1. **Overhead 1:** Colócalo directamente a unos 1 metro encima del centro de la tarola/caja, apuntando hacia abajo.
+              • Envía el <strong>Canal 8 a Bus 4 en +2 dB</strong> (Post-Fader).
               <br>
-              2. **Overhead 2:** Colócalo por encima del hombro derecho del baterista (cerca del tom de piso), apuntando hacia la tarola.
-              <br>
-              3. **Regla de oro de fase:** Mide con un cable que ambos micrófonos estén **exactamente a la misma distancia del centro de la tarola** (ej. 1 metro cada uno). ¡Esto hace que la tarola suene con pegada bestial sin cancelaciones!
+              • Configura la <strong>Gate (Puerta)</strong> con Attack en 1ms, Hold en 45ms y Release en 120ms para que el bombo no se quede zumbando en las cajas de 18".
             </p>
           </div>
 
           <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-            <h4 class="text-xs font-bold text-emerald-400 uppercase mb-2">Gate (Puerta de Ruido) para el Bombo</h4>
+            <h4 class="text-xs font-bold text-emerald-400 uppercase mb-2">Bus 1: Monitoreo de Lalo</h4>
             <p class="text-xs text-slate-300 leading-relaxed">
-              El micrófono de bombo suele retumbar mucho dentro del casco si no tiene puerta:
+              Lalo necesita principalmente la referencia rítmica y el tiempo:
               <br><br>
-              • **Threshold:** Ajusta para que la puerta solo se abra cuando el baterista patea el pedal.
+              • <strong>Jamzone (Ch 1 y 2):</strong> Fader arriba para escuchar la claqueta (click) y secuencias.
               <br>
-              • **Hold:** 50 ms | **Release:** 150 ms.
+              • <strong>Bajo de Fer (Ch 7):</strong> Fundamental para amarrar el ritmo.
               <br>
-              Esto corta cualquier zumbido continuo y hace que cada golpe en los subs de 18" sea seco, limpio y contundente.
+              • <strong>Voces (Ch 6 y 9):</strong> Nivel moderado para seguir los cortes y estribillos.
             </p>
           </div>
         </div>
@@ -566,65 +664,95 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- SECTION 5: MASTER & SUBS (BUS 6)                         -->
+    <!-- SECTION 5: JAMZONE (CANALES 1 & 2)                       -->
     <!-- ======================================================== -->
-    <section id="section-master" class="section-content hidden space-y-6">
+    <section id="section-jamzone" class="section-content hidden space-y-6">
       <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-5">
         <div class="border-b border-slate-800 pb-4">
-          <div class="inline-flex items-center gap-1 text-[11px] text-amber-400 font-mono font-semibold">MASTER & AUXILIARES • XR18</div>
-          <h2 class="text-2xl font-black text-white">Ruteo Maestro, Subs por Aux 6 y Efectos</h2>
-          <p class="text-xs text-slate-400 mt-0.5">La conexión que elimina acoples graves y maximiza la potencia de tus bocinas JBL.</p>
+          <div class="inline-flex items-center gap-1 text-[11px] text-amber-400 font-mono font-semibold">JAMZONE • INPUTS 1 & 2 (STEREO LINK)</div>
+          <h2 class="text-2xl font-black text-white">Jamzone: Backing Tracks (Ch 1 & 2)</h2>
+          <p class="text-xs text-slate-400 mt-0.5">Cómo integrar pistas de acompañamiento sin que ensucien los instrumentos en vivo.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <!-- Subs por Aux 6 -->
-          <div class="bg-slate-950 p-5 rounded-xl border border-amber-500/30 space-y-3">
-            <div class="flex items-center gap-2">
-              <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">1</span>
-              <h3 class="text-sm font-bold text-amber-300 uppercase">Configurar "Subs por Aux 6" en XR18</h3>
-            </div>
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+            <h4 class="text-sm font-bold text-amber-400">1. Enlace Estéreo (Stereo Link)</h4>
             <p class="text-xs text-slate-300 leading-relaxed">
-              En lugar de conectar todo al subwoofer y luego a los tops:
+              En la app X-Air, selecciona el <strong>Canal 1</strong>, entra a la pestaña <em>Configuration</em> y activa <strong>Stereo Link</strong> con el Canal 2:
             </p>
-            <ol class="text-xs space-y-1.5 text-slate-300 list-decimal list-inside">
-              <li>Conecta la salida física <strong>Aux 6 de la XR18</strong> directo a la entrada de tus <strong>Subwoofers de 18"</strong>.</li>
-              <li>Conecta las salidas <strong>Main L y Main R</strong> directo a tus <strong>Tops JBL</strong>.</li>
-              <li>En la app X-Air, selecciona <strong>Bus 6 (Aux 6)</strong>:
-                <br>• Sube el fader de envío del <strong>Bombo</strong> (a 0 dB).
-                <br>• Sube el fader de envío del <strong>Bajo de Fer</strong> (a 0 dB).
-                <br>• <em>Deja en MUTE o abajo todos los demás canales</em> (Voces, Guitarras, Platos).
-              </li>
-            </ol>
-            <div class="p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-[11px] text-amber-200">
-              ⚡ <strong>Beneficio:</strong> Los micrófonos de Phil y Poncho nunca harán acople de graves retumbantes, y tus subwoofers de 18" tendrán 100% de headroom solo para patear la base rítmica.
+            <ul class="text-xs space-y-1.5 text-slate-300 list-disc list-inside">
+              <li>El Canal 1 se paneará automáticamente a <strong>L 100%</strong>.</li>
+              <li>El Canal 2 se paneará automáticamente a <strong>R 100%</strong>.</li>
+              <li>Un solo fader moverá ambos volúmenes a la par sin descompensar.</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+            <h4 class="text-sm font-bold text-amber-400">2. Ecualización Quirúrgica para Pistas</h4>
+            <ul class="text-xs space-y-1.5 text-slate-300">
+              <li>• <strong>Low Cut (HPF) @ 80 Hz:</strong> Si en vivo tocan bajo (Fer) y batería real (Lalo), corta los subgraves de Jamzone para que no compitan en los subs de 18".</li>
+              <li>• <strong>Corte en 3 kHz (-2 dB):</strong> Abre el centro para que las voces de Phil y Poncho destaquen por encima de las pistas.</li>
+              <li>• <strong>Envío a Bus 4 (Subs):</strong> Manténlo bajo o cerrado salvo que la pista traiga sintetizadores o bajos electrónicos que no toque Fer.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- SECTION 6: BUSES DE MONITOREO & SUBWOOFERS (BUS 4)       -->
+    <!-- ======================================================== -->
+    <section id="section-buses" class="section-content hidden space-y-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-5">
+        <div class="border-b border-slate-800 pb-4">
+          <div class="inline-flex items-center gap-1 text-[11px] text-amber-400 font-mono font-semibold">RUTEO DE SALIDAS • BUS 1 AL 6</div>
+          <h2 class="text-2xl font-black text-white">Buses de Monitoreo & Subwoofers en Cadena (Bus 4)</h2>
+          <p class="text-xs text-slate-400 mt-0.5">El esquema completo de envíos físicos para escenario y graves.</p>
+        </div>
+
+        <!-- Diagram Daisy Chain Bus 4 -->
+        <div class="bg-slate-950 p-5 rounded-xl border border-amber-500/40 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-amber-300 uppercase flex items-center gap-2">
+              <span>🔊</span> Conexión de Subwoofers en Cadena (Bus 4)
+            </h3>
+            <span class="text-xs font-mono bg-amber-500/10 text-amber-400 px-2.5 py-0.5 rounded">Daisy-Chain</span>
+          </div>
+
+          <div class="p-3 bg-slate-900/90 rounded-lg border border-slate-800 font-mono text-xs text-slate-300 space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="text-amber-400 font-bold">[XR18 Salida Aux 4]</span>
+              <span>──(Cable XLR)──►</span>
+              <span class="text-emerald-400 font-bold">[Input Subwoofer 18" #1]</span>
+            </div>
+            <div class="flex items-center gap-2 pl-4 md:pl-28">
+              <span>│ (Salida Thru / Link)</span>
+              <span>──(Cable XLR)──►</span>
+              <span class="text-emerald-400 font-bold">[Input Subwoofer 18" #2]</span>
             </div>
           </div>
 
-          <!-- FX Slots -->
-          <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-3">
-            <div class="flex items-center gap-2">
-              <span class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center font-bold">2</span>
-              <h3 class="text-sm font-bold text-white uppercase">4 Procesadores de Efectos Recomendados</h3>
-            </div>
-            <ul class="text-xs space-y-2 text-slate-300">
-              <li class="p-2.5 bg-slate-900 rounded-lg border border-slate-800">
-                <strong class="text-amber-400 block mb-0.5">FX 1: Plate Reverb (Voces Phil & Poncho)</strong>
-                Decay 1.6s | Pre-delay 25ms | Low Cut 220Hz. Brinda espacialidad sin enturbiar las palabras.
-              </li>
-              <li class="p-2.5 bg-slate-900 rounded-lg border border-slate-800">
-                <strong class="text-amber-400 block mb-0.5">FX 2: Stereo Delay (Solos de Guitarra & Voz)</strong>
-                Tap tempo configurado a negras (1/4) o corchea con puntillo (dotted 1/8) con feedback al 18%.
-              </li>
-              <li class="p-2.5 bg-slate-900 rounded-lg border border-slate-800">
-                <strong class="text-amber-400 block mb-0.5">FX 3: Ambience / Room (Overheads)</strong>
-                Un toque minúsculo a los Overheads para darles tamaño de sala de conciertos a la batería.
-              </li>
-              <li class="p-2.5 bg-slate-900 rounded-lg border border-slate-800">
-                <strong class="text-amber-400 block mb-0.5">FX 4: Stereo Precision Limiter (Main L/R)</strong>
-                Insertado en el Master para proteger tus bocinas JBL de picos accidentales.
-              </li>
-            </ul>
-          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Al salir de <strong>Aux 4</strong> directo al primer subwoofer y encadenarlo al segundo:
+            <br>
+            1. Ambos reciben la misma señal calibrada sin desfases.
+            <br>
+            2. En la XR18 solo envías al <strong>Bus 4</strong> el <strong>Canal 8 (Bombo Lalo)</strong> y el <strong>Canal 7 (Bajo Fer)</strong>.
+            <br>
+            3. Los micrófonos de voz (Ch 6 y 9) jamás enviarán frecuencias graves a los subs, erradicando los acoples por retumbe.
+          </p>
+        </div>
+
+        <!-- Master L/R JBL -->
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+          <h4 class="text-xs font-bold text-emerald-400 uppercase mb-2">Main L / Main R: Tops JBL</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Las salidas Main L y Main R van directo a tus bocinas aéreas JBL.
+            <br>
+            • En el ecualizador del Main, activa un <strong>Low Cut (HPF) a 85 Hz - 90 Hz</strong>.
+            <br>
+            • De esta forma, las bocinas JBL no gastarán potencia intentando reproducir subgraves, los medios y agudos de las voces y guitarras sonarán nítidos y sin distorsión.
+          </p>
         </div>
       </div>
     </section>
@@ -764,14 +892,13 @@
       const { ctx, width, height, zeroY } = setup;
 
       if (view === 'guitar') {
-        label.innerText = "Curva XR18: Guitarra NAM Phil (Filtro Anti-Avispa 6.8 kHz + Mordida 1.2 kHz)";
+        label.innerText = "Curva XR18 Ch 4: Guitarra NAM Phil (Filtro 6.8 kHz + Mordida 1.2 kHz)";
         label.className = "text-xs font-bold text-amber-400 uppercase tracking-wider font-mono";
         tbody.innerHTML = `
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">Low Cut (HPF)</td><td class="py-2 px-3 font-mono">95 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">12 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Quita el zumbido de subgrave para no pelear con el bajo de Fer.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 1 (Palm Mute)</td><td class="py-2 px-3 font-mono">250 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">-3.0 dB</td><td class="py-2 px-3 font-mono">1.4</td><td class="py-2 px-3">Quita la bola densa de palm-mute estilo Metallica.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 2 (Mordida)</td><td class="py-2 px-3 font-mono">1.2 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.0 dB</td><td class="py-2 px-3 font-mono">1.2</td><td class="py-2 px-3">El corte líder de Phil para sobresalir en los solos de guitarra.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 3 (Espacio Voz)</td><td class="py-2 px-3 font-mono">3.8 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">-2.0 dB</td><td class="py-2 px-3 font-mono">2.2</td><td class="py-2 px-3">Abre el espacio para que la voz no tenga que forzarse.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">High Cut (LPF)</td><td class="py-2 px-3 font-mono">6.8 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">Corte Pendiente</td><td class="py-2 px-3">-</td><td class="py-2 px-3"><strong>Filtro Anti-Avispa NAM:</strong> Elimina el zumbido digital áspero en las bocinas JBL.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">Low Cut (HPF)</td><td class="py-2 px-3 font-mono">95 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">12 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Quita graves para no pelear con el bajo de Fer (Ch 7).</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 1 (Palm Mute)</td><td class="py-2 px-3 font-mono">250 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">-3.0 dB</td><td class="py-2 px-3 font-mono">1.4</td><td class="py-2 px-3">Quita la bola densa de palm-mute Metallica en Ch 4.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 2 (Mordida)</td><td class="py-2 px-3 font-mono">1.2 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.0 dB</td><td class="py-2 px-3 font-mono">1.2</td><td class="py-2 px-3">Corte líder para resaltar los solos de Phil.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">High Cut (LPF)</td><td class="py-2 px-3 font-mono">6.8 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">Corte</td><td class="py-2 px-3">-</td><td class="py-2 px-3"><strong>Filtro Anti-Avispa NAM:</strong> Elimina el zumbido digital en los tops JBL.</td></tr>
         `;
 
         ctx.beginPath();
@@ -795,9 +922,9 @@
         drawPoint(ctx, freqToX(1200, width), dbToY(2, zeroY, height), "#10b981", "+2dB 1.2kHz (Phil)");
         drawPoint(ctx, freqToX(6800, width), dbToY(-3, zeroY, height), "#f59e0b", "LPF 6.8kHz (NAM)");
       } else if (view === 'voice-lead') {
-        renderVoiceCurve(ctx, width, height, zeroY, 'lead', label, tbody, "Phil");
+        renderVoiceCurve(ctx, width, height, zeroY, 'lead', label, tbody, "Phil (Ch 6)");
       } else {
-        renderVoiceCurve(ctx, width, height, zeroY, 'back', label, tbody, "Phil");
+        renderVoiceCurve(ctx, width, height, zeroY, 'back', label, tbody, "Phil (Ch 6)");
       }
     }
 
@@ -817,13 +944,13 @@
       const { ctx, width, height, zeroY } = setup;
 
       if (view === 'guitar') {
-        label.innerText = "Curva XR18: Guitarra Poncho (Cuerpo 850 Hz - Paneo R65%)";
+        label.innerText = "Curva XR18 Ch 10: Guitarra Poncho (Cuerpo 850 Hz - Paneo R 65%)";
         label.className = "text-xs font-bold text-amber-400 uppercase tracking-wider font-mono";
         tbody.innerHTML = `
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">Low Cut (HPF)</td><td class="py-2 px-3 font-mono">95 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">12 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Corta graves que estorban al bajo de Fer.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 1 (Cuerpo Rítmico)</td><td class="py-2 px-3 font-mono">850 Hz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.5 dB</td><td class="py-2 px-3 font-mono">1.3</td><td class="py-2 px-3">Da grosor a la rítmica de Poncho complementando el agudo de Phil.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 2 (Espacio Voz)</td><td class="py-2 px-3 font-mono">3.0 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">-2.0 dB</td><td class="py-2 px-3 font-mono">1.5</td><td class="py-2 px-3">Deja espacio transparente para las voces principales.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">High Cut (LPF)</td><td class="py-2 px-3 font-mono">7.0 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">Corte</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Suaviza las frecuencias altas de distorsión.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">Low Cut (HPF)</td><td class="py-2 px-3 font-mono">95 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">12 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Corta graves que estorban al bajo de Fer (Ch 7).</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 1 (Cuerpo Rítmico)</td><td class="py-2 px-3 font-mono">850 Hz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.5 dB</td><td class="py-2 px-3 font-mono">1.3</td><td class="py-2 px-3">Grosor rítmico para Poncho en Ch 10 complementando a Phil.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 2 (Espacio Voz)</td><td class="py-2 px-3 font-mono">3.0 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">-2.0 dB</td><td class="py-2 px-3 font-mono">1.5</td><td class="py-2 px-3">Deja espacio transparente para las voces.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">High Cut (LPF)</td><td class="py-2 px-3 font-mono">7.0 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">Corte</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Suaviza el filo de distorsión en los tops JBL.</td></tr>
         `;
 
         ctx.beginPath();
@@ -846,22 +973,22 @@
         drawPoint(ctx, freqToX(3000, width), dbToY(-2, zeroY, height), "#f43f5e", "-2dB @ 3kHz");
         drawPoint(ctx, freqToX(7000, width), dbToY(-3, zeroY, height), "#f59e0b", "LPF 7kHz");
       } else if (view === 'voice-lead') {
-        renderVoiceCurve(ctx, width, height, zeroY, 'lead', label, tbody, "Poncho");
+        renderVoiceCurve(ctx, width, height, zeroY, 'lead', label, tbody, "Poncho (Ch 9)");
       } else {
-        renderVoiceCurve(ctx, width, height, zeroY, 'back', label, tbody, "Poncho");
+        renderVoiceCurve(ctx, width, height, zeroY, 'back', label, tbody, "Poncho (Ch 9)");
       }
     }
 
     // Generic voice curve drawer
     function renderVoiceCurve(ctx, width, height, zeroY, type, labelEl, tbodyEl, singerName) {
       if (type === 'lead') {
-        labelEl.innerText = `Curva XR18: Voz LÍDER de ${singerName} (Corte 3.5 kHz al frente)`;
+        labelEl.innerText = `Curva XR18: Voz LÍDER ${singerName} (Corte 3.5 kHz al frente)`;
         labelEl.className = "text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono";
         tbodyEl.innerHTML = `
-          <tr><td class="py-2 px-3 font-semibold text-emerald-400">HPF (Low Cut)</td><td class="py-2 px-3 font-mono">110 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">12 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Corta golpes mecánicos del pedestal sin adelgazar la voz.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Banda 1 (Cuerpo)</td><td class="py-2 px-3 font-mono">280 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">-1.5 dB</td><td class="py-2 px-3 font-mono">1.4</td><td class="py-2 px-3">Atenúa la opacidad al cantar muy pegado al micro.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Banda 2 (Presencia Líder)</td><td class="py-2 px-3 font-mono">3.5 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.5 dB</td><td class="py-2 px-3 font-mono">1.2</td><td class="py-2 px-3"><strong>La frecuencia del Metal:</strong> Corta el muro de distorsión sin subir el volumen general.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-emerald-400">High Shelf</td><td class="py-2 px-3 font-mono">10 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+1.5 dB</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Brillo profesional y aire en la voz líder.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">HPF (Low Cut)</td><td class="py-2 px-3 font-mono">110 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">12 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Corta golpes sin quitar cuerpo.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Banda 1 (Cuerpo)</td><td class="py-2 px-3 font-mono">280 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">-1.5 dB</td><td class="py-2 px-3 font-mono">1.4</td><td class="py-2 px-3">Atenúa opacidad por proximidad al micrófono.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Banda 2 (Presencia)</td><td class="py-2 px-3 font-mono">3.5 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.5 dB</td><td class="py-2 px-3 font-mono">1.2</td><td class="py-2 px-3"><strong>Corte de Metal:</strong> Corta la muralla de distorsión al frente.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">High Shelf</td><td class="py-2 px-3 font-mono">10 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+1.5 dB</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Brillo y aire en el registro vocal.</td></tr>
         `;
 
         ctx.beginPath();
@@ -884,13 +1011,13 @@
         drawPoint(ctx, freqToX(3500, width), dbToY(2.5, zeroY, height), "#10b981", "+2.5dB 3.5kHz (Líder)");
         drawPoint(ctx, freqToX(10000, width), dbToY(1.5, zeroY, height), "#10b981", "+1.5dB Aire");
       } else {
-        labelEl.innerText = `Curva XR18: Coros de ${singerName} (Fórmula del Libro: Detrás del Líder)`;
+        labelEl.innerText = `Curva XR18: Coros ${singerName} (Detrás del Líder)`;
         labelEl.className = "text-xs font-bold text-amber-400 uppercase tracking-wider font-mono";
         tbodyEl.innerHTML = `
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">HPF (Pasa Altos)</td><td class="py-2 px-3 font-mono">150 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">12 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Los coros no necesitan graves; deja libre el piso para el bajo y la voz líder.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 1 (Barro)</td><td class="py-2 px-3 font-mono">250 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">-3.0 dB</td><td class="py-2 px-3 font-mono">1.0</td><td class="py-2 px-3">Evita la acumulación de frecuencias opacas al sumar voces.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 2 (Espacio Líder)</td><td class="py-2 px-3 font-mono">3.0 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">-2.0 dB</td><td class="py-2 px-3 font-mono">1.2</td><td class="py-2 px-3"><strong>¡La clave!</strong> Deja pasar la presencia del cantante principal sin competir.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-amber-400">High Shelf (Aire)</td><td class="py-2 px-3 font-mono">10 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+1.0 dB</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Apertura suave que abre el estéreo sin estridencia.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">HPF (Pasa Altos)</td><td class="py-2 px-3 font-mono">150 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">12 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Limpia el piso grave para el bajo y la voz líder.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 1 (Barro)</td><td class="py-2 px-3 font-mono">250 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">-3.0 dB</td><td class="py-2 px-3 font-mono">1.0</td><td class="py-2 px-3">Quita la suma de bola pastosa.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">Banda 2 (Espacio Líder)</td><td class="py-2 px-3 font-mono">3.0 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">-2.0 dB</td><td class="py-2 px-3 font-mono">1.2</td><td class="py-2 px-3"><strong>¡La clave!</strong> Cede el paso a la voz líder sin pelear.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">High Shelf</td><td class="py-2 px-3 font-mono">10 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+1.0 dB</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Apertura suave sin estridencia.</td></tr>
         `;
 
         ctx.beginPath();
@@ -946,7 +1073,7 @@
       drawPoint(ctx, freqToX(2500, width), dbToY(3.5, zeroY, height), "#06b6d4", "Ataque Steve Harris 2.5kHz");
     }
 
-    // DRUM CONTROLS (1 BOMBO + 2 OVERHEADS)
+    // DRUM CONTROLS
     function setDrumView(view) {
       const btnK = document.getElementById('btn-drum-kick');
       const btnO = document.getElementById('btn-drum-oh');
@@ -960,13 +1087,13 @@
       const { ctx, width, height, zeroY } = setup;
 
       if (view === 'kick') {
-        label.innerText = "Curva XR18: Micrófono de Bombo (Subgrave 18\" + Clic Lars Ulrich)";
+        label.innerText = "Curva XR18 Ch 8: Bombo de Lalo (Subgrave 60 Hz a Bus 4 + Clic 4 kHz)";
         label.className = "text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono";
         tbody.innerHTML = `
-          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Low Boost (Subs 18")</td><td class="py-2 px-3 font-mono">60 Hz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+3.5 dB</td><td class="py-2 px-3 font-mono">1.4</td><td class="py-2 px-3">El impacto en el pecho aprovechando tus subwoofers JBL de 18".</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Corte Anti-Cartón</td><td class="py-2 px-3 font-mono">350 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">-5.0 dB</td><td class="py-2 px-3 font-mono">1.5</td><td class="py-2 px-3"><strong>Imprescindible:</strong> Quita el sonido hueco a caja de cartón barata.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Clic de Maza (Beater)</td><td class="py-2 px-3 font-mono">4.0 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+4.0 dB</td><td class="py-2 px-3 font-mono">1.8</td><td class="py-2 px-3">El chasquido metálico para que el bombo se entienda entre las guitarras distorsionadas.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-emerald-400">High Cut (LPF)</td><td class="py-2 px-3 font-mono">9.0 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">Corte</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Elimina el sangrado agudo de los platillos entrando por el micro de bombo.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Low Boost (Subs 18")</td><td class="py-2 px-3 font-mono">60 Hz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+3.5 dB</td><td class="py-2 px-3 font-mono">1.4</td><td class="py-2 px-3">El impacto en el pecho a través del Bus 4 en tus subs de 18".</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Corte Anti-Cartón</td><td class="py-2 px-3 font-mono">350 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">-5.0 dB</td><td class="py-2 px-3 font-mono">1.5</td><td class="py-2 px-3"><strong>Imprescindible:</strong> Quita el sonido hueco a caja de cartón.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Clic de Maza (Beater)</td><td class="py-2 px-3 font-mono">4.0 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+4.0 dB</td><td class="py-2 px-3 font-mono">1.8</td><td class="py-2 px-3">Chasquido metálico para que el bombo corte las guitarras en los tops JBL.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">High Cut (LPF)</td><td class="py-2 px-3 font-mono">9.0 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">Corte</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Elimina sangrado de platillos en el micrófono del bombo.</td></tr>
         `;
 
         ctx.beginPath();
@@ -985,18 +1112,18 @@
           if (px === 40) ctx.moveTo(px, y); else ctx.lineTo(px, y);
         }
         ctx.stroke();
-        drawPoint(ctx, freqToX(60, width), dbToY(3.5, zeroY, height), "#10b981", "+3.5dB 60Hz (Subs 18\")");
+        drawPoint(ctx, freqToX(60, width), dbToY(3.5, zeroY, height), "#10b981", "+3.5dB 60Hz (Subs Bus 4)");
         drawPoint(ctx, freqToX(350, width), dbToY(-5, zeroY, height), "#f43f5e", "-5dB 350Hz (Anti-Cartón)");
         drawPoint(ctx, freqToX(4000, width), dbToY(4, zeroY, height), "#10b981", "+4dB 4kHz (Clic Maza)");
         drawPoint(ctx, freqToX(9000, width), dbToY(-3, zeroY, height), "#f59e0b", "LPF 9kHz");
       } else {
-        label.innerText = "Curva XR18: 2 Overheads (Corte HPF 350Hz + Captura Caja/Platos)";
+        label.innerText = "Curva XR18 Ch 14 & 15: Overheads (Corte HPF 380Hz + Captura Caja/Platos)";
         label.className = "text-xs font-bold text-purple-400 uppercase tracking-wider font-mono";
         tbody.innerHTML = `
-          <tr><td class="py-2 px-3 font-semibold text-purple-400">High Pass Filter (HPF)</td><td class="py-2 px-3 font-mono">350 - 400 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">18 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3"><strong>¡Vital en vivo con 3 micros!</strong> Evita que los aéreos dupliquen el retumbe del bombo y el bajo en el escenario.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-purple-400">Cuerpo Tarola/Toms</td><td class="py-2 px-3 font-mono">1.5 - 2.0 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.0 dB</td><td class="py-2 px-3 font-mono">1.2</td><td class="py-2 px-3">Aporta la definición del chasquido de la tarola y el golpe de baquetas.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-purple-400">Dureza de Platos</td><td class="py-2 px-3 font-mono">4.5 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">-2.5 dB</td><td class="py-2 px-3 font-mono">2.0</td><td class="py-2 px-3">Quita la estridencia dolorosa de los platos crash cuando se tocan fuerte.</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-purple-400">Aire & Hi-Hat (Shelf)</td><td class="py-2 px-3 font-mono">10 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.0 dB</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Definición brillante de los platillos en los tops JBL. Panea Overhead L a L80% y Overhead R a R80%.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-purple-400">High Pass Filter (HPF)</td><td class="py-2 px-3 font-mono">380 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">18 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3"><strong>¡Vital en vivo!</strong> Evita que los aéreos dupliquen el retumbe de los subs de 18".</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-purple-400">Cuerpo Tarola/Toms</td><td class="py-2 px-3 font-mono">1.8 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.0 dB</td><td class="py-2 px-3 font-mono">1.2</td><td class="py-2 px-3">Definición del chasquido de la tarola y golpes de baqueta de Lalo.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-purple-400">Dureza de Platos</td><td class="py-2 px-3 font-mono">4.5 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">-2.5 dB</td><td class="py-2 px-3 font-mono">2.0</td><td class="py-2 px-3">Quita la estridencia dolorosa de los platos crash.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-purple-400">Aire & Hi-Hat (Shelf)</td><td class="py-2 px-3 font-mono">10 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.0 dB</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Brillo en los tops JBL. Panea Ch 14 a L 75% y Ch 15 a R 75%.</td></tr>
         `;
 
         ctx.beginPath();
