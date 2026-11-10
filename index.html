@@ -29,7 +29,7 @@
       </div>
       <div>
         <div class="text-xs font-bold text-white uppercase tracking-wider">Manual XR18</div>
-        <div class="text-[10px] text-amber-400 font-mono">Phil • Poncho • Fer • Lalo</div>
+        <div class="text-[10px] text-amber-400 font-mono">Phil • Poncho • Fer • Marco</div>
       </div>
     </div>
     <button onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700">
@@ -99,12 +99,12 @@
         </div>
       </button>
 
-      <!-- Batería Lalo (Ch 8 & 14-15) -->
+      <!-- Batería Marco (Ch 8 & 14-15) -->
       <button onclick="navigate('bateria')" id="nav-bateria" class="nav-btn w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80">
         <span class="text-base">🥁</span>
         <div class="flex-1">
-          <div class="font-bold text-white">Lalo (Batería)</div>
-          <div class="text-[10px] text-slate-400">Bombo Ch8, Over Ch14-15 | Bus 1</div>
+          <div class="font-bold text-white">Marco (Batería)</div>
+          <div class="text-[10px] text-slate-400">Bombo Ch8, Over Ch14-15 | Bus 1/3 Estéreo</div>
         </div>
       </button>
 
@@ -124,7 +124,7 @@
         <span class="text-base">🎚️</span>
         <div class="flex-1">
           <div class="font-bold text-white">Buses de Monitoreo</div>
-          <div class="text-[10px] text-slate-400">Bus 4 (Subs 18"), Bus 1, 2, 5/6</div>
+          <div class="text-[10px] text-slate-400">Bus 4 (Subs 18"), Bus 1/3, 2, 5/6</div>
         </div>
       </button>
 
@@ -171,7 +171,7 @@
             <span class="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">Behringer XR18</span>
           </h1>
           <p class="text-xs md:text-sm text-slate-300 max-w-2xl leading-relaxed">
-            Configuración exacta de tus entradas físicas <strong>(Ch 1 al 15)</strong>, el sistema de <strong>Subwoofers en cadena por Bus 4</strong>, mezclas de monitoreo independientes para <strong>Lalo (Batería)</strong>, <strong>Poncho</strong>, <strong>Phil & Hermano (Estéreo)</strong> y el balance de pistas <strong>Jamzone</strong>.
+            Configuración exacta de tus entradas físicas <strong>(Ch 1 al 15)</strong>, el sistema de <strong>Subwoofers en cadena por Bus 4</strong>, mezclas de monitoreo independientes para <strong>Marco (Batería en Estéreo Bus 1 y 3)</strong>, <strong>Poncho (Bus 2)</strong>, <strong>Phil & Hermano (Estéreo Bus 5 y 6)</strong> y el balance de pistas <strong>Jamzone</strong>.
           </p>
         </div>
       </div>
@@ -246,7 +246,7 @@
               <tr class="hover:bg-slate-800/30">
                 <td class="py-2 px-3 font-mono font-bold text-emerald-400">CH 08</td>
                 <td class="py-2 px-3 font-semibold text-emerald-300">Micrófono Bombo (Kick)</td>
-                <td class="py-2 px-3 text-emerald-400 font-semibold">Lalo (Batería)</td>
+                <td class="py-2 px-3 text-emerald-400 font-semibold">Marco (Batería)</td>
                 <td class="py-2 px-3 font-mono text-slate-400">Mic Dinámico XLR</td>
                 <td class="py-2 px-3 text-emerald-400 font-bold">SÍ (+2 dB a Bus 4)</td>
                 <td class="py-2 px-3 text-white font-bold">Centro (C)</td>
@@ -270,7 +270,7 @@
               <tr class="hover:bg-slate-800/30">
                 <td class="py-2 px-3 font-mono font-bold text-emerald-400">CH 14</td>
                 <td class="py-2 px-3 font-semibold text-emerald-300">Overhead Izquierdo (OH-L)</td>
-                <td class="py-2 px-3 text-emerald-400 font-semibold">Lalo (Batería)</td>
+                <td class="py-2 px-3 text-emerald-400 font-semibold">Marco (Batería)</td>
                 <td class="py-2 px-3 font-mono text-slate-400">Condenser (+48V)</td>
                 <td class="py-2 px-3 text-rose-400 font-semibold">MUTE / Cero</td>
                 <td class="py-2 px-3 text-emerald-300 font-bold">L 75%</td>
@@ -278,7 +278,7 @@
               <tr class="hover:bg-slate-800/30">
                 <td class="py-2 px-3 font-mono font-bold text-emerald-400">CH 15</td>
                 <td class="py-2 px-3 font-semibold text-emerald-300">Overhead Derecho (OH-R)</td>
-                <td class="py-2 px-3 text-emerald-400 font-semibold">Lalo (Batería)</td>
+                <td class="py-2 px-3 text-emerald-400 font-semibold">Marco (Batería)</td>
                 <td class="py-2 px-3 font-mono text-slate-400">Condenser (+48V)</td>
                 <td class="py-2 px-3 text-rose-400 font-semibold">MUTE / Cero</td>
                 <td class="py-2 px-3 text-emerald-300 font-bold">R 75%</td>
@@ -303,14 +303,14 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-          <!-- Bus 1 -->
-          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+          <!-- Bus 1 & 3 -->
+          <div class="bg-slate-950 p-3.5 rounded-xl border border-emerald-500/40">
             <div class="flex justify-between items-center mb-1">
-              <span class="text-amber-400 font-mono font-bold">AUX 1 (BUS 1)</span>
-              <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Mono</span>
+              <span class="text-emerald-400 font-mono font-bold">AUX 1 & 3 (BUS 1 / BUS 3)</span>
+              <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-bold">Estéreo (L=Bus 1 / R=Bus 3)</span>
             </div>
-            <div class="font-bold text-white text-sm">Monitoreo de Lalo (Batería)</div>
-            <p class="text-slate-400 mt-1">Mezcla prioritaria: Jamzone (click y secuencias), Bajo de Fer y voces.</p>
+            <div class="font-bold text-white text-sm">Monitoreo Estéreo de Marco (Batería)</div>
+            <p class="text-slate-400 mt-1">Salidas <strong>Aux 1 (Izquierda)</strong> y <strong>Aux 3 (Derecha)</strong> en estéreo: Jamzone (click y secuencias L/R), Bajo de Fer, guitarras separadas L/R y voces.</p>
           </div>
 
           <!-- Bus 2 -->
@@ -521,7 +521,7 @@
         <div class="border-b border-slate-800 pb-4">
           <div class="inline-flex items-center gap-1 text-[11px] text-cyan-400 font-mono font-semibold">FER • INPUT 7 • ALIMENTACIÓN A BUS 4 (SUBS 18")</div>
           <h2 class="text-2xl font-black text-white">Fer: Bajo Eléctrico (Ch 7) & Subwoofers de 18"</h2>
-          <p class="text-xs text-slate-400 mt-0.5">El enlace armónico que hace tronar el pecho en conjunto con el bombo de Lalo.</p>
+          <p class="text-xs text-slate-400 mt-0.5">El enlace armónico que hace tronar el pecho en conjunto con el bombo de Marco.</p>
         </div>
 
         <!-- Canvas EQ Fer -->
@@ -559,7 +559,7 @@
                 <td class="py-2 px-3 font-mono">65 Hz</td>
                 <td class="py-2 px-3 text-rose-400 font-semibold">-3.5 dB</td>
                 <td class="py-2 px-3 font-mono">1.8</td>
-                <td class="py-2 px-3"><strong>¡Vital!</strong> Deja esta frecuencia libre para el golpe del bombo de Lalo (Ch 8).</td>
+                <td class="py-2 px-3"><strong>¡Vital!</strong> Deja esta frecuencia libre para el golpe del bombo de Marco (Ch 8).</td>
               </tr>
               <tr>
                 <td class="py-2 px-3 font-semibold text-cyan-400">Banda 2 (Cuerpo Bajo)</td>
@@ -600,15 +600,15 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- SECTION 4: LALO - BATERÍA (CANALES 8 & 14-15)            -->
+    <!-- SECTION 4: MARCO - BATERÍA (CANALES 8 & 14-15)           -->
     <!-- ======================================================== -->
     <section id="section-bateria" class="section-content hidden space-y-6">
       <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-5">
         <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
           <div>
-            <div class="inline-flex items-center gap-1 text-[11px] text-emerald-400 font-mono font-semibold">LALO • KICK CH 8 • OVERHEADS CH 14 & 15 • MONITOR BUS 1</div>
-            <h2 class="text-2xl font-black text-white">Lalo: Batería (3 Micrófonos) & Monitor Bus 1</h2>
-            <p class="text-xs text-slate-400 mt-0.5">Pegada bestial en el bombo hacia los subs de 18" y captura estereofónica con 2 aéreos.</p>
+            <div class="inline-flex items-center gap-1 text-[11px] text-emerald-400 font-mono font-semibold">MARCO • KICK CH 8 • OVERHEADS CH 14 & 15 • MONITOR ESTÉREO BUS 1 & 3</div>
+            <h2 class="text-2xl font-black text-white">Marco: Batería (3 Micrófonos) & Monitor Estéreo (Bus 1 y 3)</h2>
+            <p class="text-xs text-slate-400 mt-0.5">Pegada bestial en el bombo hacia los subs de 18", captura con 2 aéreos y monitoreo estéreo por Aux 1 y Aux 3.</p>
           </div>
           <div class="flex gap-2">
             <button onclick="setDrumView('kick')" id="btn-drum-kick" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 text-white">
@@ -624,7 +624,7 @@
         <div class="bg-slate-950 border border-slate-800 rounded-xl p-3">
           <div class="flex justify-between items-center mb-2 px-1">
             <span id="drumCanvasLabel" class="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">
-              Curva XR18 Ch 8: Bombo de Lalo (Subgrave 60 Hz + Clic 4 kHz)
+              Curva XR18 Ch 8: Bombo de Marco (Subgrave 60 Hz + Clic 4 kHz)
             </span>
             <span class="text-[11px] text-slate-500 font-mono">PEQ</span>
           </div>
@@ -658,16 +658,16 @@
             </p>
           </div>
 
-          <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-            <h4 class="text-xs font-bold text-emerald-400 uppercase mb-2">Bus 1: Monitoreo de Lalo</h4>
+          <div class="bg-slate-950/80 p-4 rounded-xl border border-emerald-500/30">
+            <h4 class="text-xs font-bold text-emerald-400 uppercase mb-2">Bus 1 (L) & Bus 3 (R): Monitoreo Estéreo de Marco</h4>
             <p class="text-xs text-slate-300 leading-relaxed">
-              Lalo necesita principalmente la referencia rítmica y el tiempo:
+              Marco recibe su mezcla en <strong>Estéreo usando las salidas Aux 1 (Izquierda) y Aux 3 (Derecha)</strong>:
               <br><br>
-              • <strong>Jamzone (Ch 1 y 2):</strong> Fader arriba para escuchar la claqueta (click) y secuencias.
+              • <strong>Jamzone (Ch 1 y 2):</strong> Envía Ch 1 a <strong>Bus 1</strong> y Ch 2 a <strong>Bus 3</strong> para claqueta (click) y secuencias en estéreo real.
               <br>
-              • <strong>Bajo de Fer (Ch 7):</strong> Fundamental para amarrar el ritmo.
+              • <strong>Guitarras separadas:</strong> Mayor presencia de Phil (Ch 4) en <strong>Bus 1 (L)</strong> y de Poncho (Ch 10) en <strong>Bus 3 (R)</strong>.
               <br>
-              • <strong>Voces (Ch 6 y 9):</strong> Nivel moderado para seguir los cortes y estribillos.
+              • <strong>Bajo de Fer (Ch 7) y Voces (Ch 6 y 9):</strong> Enviados por igual a <strong>Bus 1 y Bus 3</strong> para que queden sólidos al centro de sus In-Ears/monitores.
             </p>
           </div>
         </div>
@@ -701,7 +701,7 @@
           <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
             <h4 class="text-sm font-bold text-amber-400">2. Ecualización Quirúrgica para Pistas</h4>
             <ul class="text-xs space-y-1.5 text-slate-300">
-              <li>• <strong>Low Cut (HPF) @ 80 Hz:</strong> Si en vivo tocan bajo (Fer) y batería real (Lalo), corta los subgraves de Jamzone para que no compitan en los subs de 18".</li>
+              <li>• <strong>Low Cut (HPF) @ 80 Hz:</strong> Si en vivo tocan bajo (Fer) y batería real (Marco), corta los subgraves de Jamzone para que no compitan en los subs de 18".</li>
               <li>• <strong>Corte en 3 kHz (-2 dB):</strong> Abre el centro para que las voces de Phil y Poncho destaquen por encima de las pistas.</li>
               <li>• <strong>Envío a Bus 4 (Subs):</strong> Manténlo bajo o cerrado salvo que la pista traiga sintetizadores o bajos electrónicos que no toque Fer.</li>
             </ul>
@@ -748,7 +748,7 @@
             <br>
             1. Ambos reciben la misma señal calibrada sin desfases.
             <br>
-            2. En la XR18 solo envías al <strong>Bus 4</strong> el <strong>Canal 8 (Bombo Lalo)</strong> y el <strong>Canal 7 (Bajo Fer)</strong>.
+            2. En la XR18 solo envías al <strong>Bus 4</strong> el <strong>Canal 8 (Bombo Marco)</strong> y el <strong>Canal 7 (Bajo Fer)</strong>.
             <br>
             3. Los micrófonos de voz (Ch 6 y 9) jamás enviarán frecuencias graves a los subs, erradicando los acoples por retumbe.
           </p>
@@ -1203,7 +1203,7 @@
       const { ctx, width, height, zeroY } = setup;
 
       if (view === 'kick') {
-        label.innerText = "Curva XR18 Ch 8: Bombo de Lalo (Subgrave 60 Hz a Bus 4 + Clic 4 kHz)";
+        label.innerText = "Curva XR18 Ch 8: Bombo de Marco (Subgrave 60 Hz a Bus 4 + Clic 4 kHz)";
         label.className = "text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono";
         tbody.innerHTML = `
           <tr><td class="py-2 px-3 font-semibold text-emerald-400">Low Boost (Subs 18")</td><td class="py-2 px-3 font-mono">60 Hz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+3.5 dB</td><td class="py-2 px-3 font-mono">1.4</td><td class="py-2 px-3">El impacto en el pecho a través del Bus 4 en tus subs de 18".</td></tr>
@@ -1237,7 +1237,7 @@
         label.className = "text-xs font-bold text-purple-400 uppercase tracking-wider font-mono";
         tbody.innerHTML = `
           <tr><td class="py-2 px-3 font-semibold text-purple-400">High Pass Filter (HPF)</td><td class="py-2 px-3 font-mono">380 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">18 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3"><strong>¡Vital en vivo!</strong> Evita que los aéreos dupliquen el retumbe de los subs de 18".</td></tr>
-          <tr><td class="py-2 px-3 font-semibold text-purple-400">Cuerpo Tarola/Toms</td><td class="py-2 px-3 font-mono">1.8 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.0 dB</td><td class="py-2 px-3 font-mono">1.2</td><td class="py-2 px-3">Definición del chasquido de la tarola y golpes de baqueta de Lalo.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-purple-400">Cuerpo Tarola/Toms</td><td class="py-2 px-3 font-mono">1.8 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.0 dB</td><td class="py-2 px-3 font-mono">1.2</td><td class="py-2 px-3">Definición del chasquido de la tarola y golpes de baqueta de Marco.</td></tr>
           <tr><td class="py-2 px-3 font-semibold text-purple-400">Dureza de Platos</td><td class="py-2 px-3 font-mono">4.5 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">-2.5 dB</td><td class="py-2 px-3 font-mono">2.0</td><td class="py-2 px-3">Quita la estridencia dolorosa de los platos crash.</td></tr>
           <tr><td class="py-2 px-3 font-semibold text-purple-400">Aire & Hi-Hat (Shelf)</td><td class="py-2 px-3 font-mono">10 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.0 dB</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Brillo en los tops JBL. Panea Ch 14 a L 75% y Ch 15 a R 75%.</td></tr>
         `;
