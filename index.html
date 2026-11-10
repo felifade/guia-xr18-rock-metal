@@ -127,6 +127,17 @@
           <div class="text-[10px] text-slate-400">Bus 4 (Subs 18"), Bus 1, 2, 5/6</div>
         </div>
       </button>
+
+      <span class="text-[10px] font-bold text-amber-400/90 uppercase tracking-widest px-3 block pt-3 mb-1">Mastering & Canciones</span>
+
+      <!-- Estudio 3D & Presets por Canción -->
+      <button onclick="navigate('estudio3d')" id="nav-estudio3d" class="nav-btn w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80 border border-amber-500/20">
+        <span class="text-base">🔥</span>
+        <div class="flex-1">
+          <div class="font-bold text-amber-300">Recetas Estudio 3D</div>
+          <div class="text-[10px] text-slate-400">Fuel • Fade To Black • Wherever</div>
+        </div>
+      </button>
     </div>
 
     <!-- Live Quick Status -->
@@ -757,6 +768,110 @@
       </div>
     </section>
 
+    <!-- ======================================================== -->
+    <!-- SECTION 7: RECETAS ESTUDIO 3D (FUEL / FADE / WHEREVER)   -->
+    <!-- ======================================================== -->
+    <section id="section-estudio3d" class="section-content hidden space-y-6">
+      <div class="bg-slate-900 border border-amber-500/30 rounded-2xl p-5 shadow-sm space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+          <div>
+            <div class="inline-flex items-center gap-1 text-[11px] text-amber-400 font-mono font-semibold">MASTERIZACIÓN V3 • MILITIA INC. • ESTÁNDAR BLACK ALBUM</div>
+            <h2 class="text-2xl font-black text-white">Recetas Quirúrgicas 3D (En Vivo & Grabación)</h2>
+            <p class="text-xs text-slate-400 mt-0.5">Curvas calibradas de nuestras sesiones reales de <strong>Fuel</strong>, <strong>Fade To Black</strong> y <strong>Wherever I May Roam</strong>.</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="setEstudio3DView('v30')" id="btn-e3d-v30" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 text-slate-950">
+              🎸 Guitarras Anti-Abejas (V30)
+            </button>
+            <button onclick="setEstudio3DView('hetfield')" id="btn-e3d-hetfield" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-800 text-slate-300">
+              🎤 Voz Hetfield 3D
+            </button>
+            <button onclick="setEstudio3DView('newsted')" id="btn-e3d-newsted" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-800 text-slate-300">
+              ⚡ Bajo Black Album
+            </button>
+            <button onclick="setEstudio3DView('ulrich')" id="btn-e3d-ulrich" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-800 text-slate-300">
+              🥁 Batería Lars (Kick + Caja)
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Canvas Estudio 3D -->
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-2 px-1">
+            <span id="estudio3DCanvasLabel" class="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">
+              Curva Quirúrgica V3: Desaturación de Guitarras (Estilo Celestion V30)
+            </span>
+            <span class="text-[11px] text-slate-500 font-mono">Calibración Estudio / XR18</span>
+          </div>
+          <canvas id="canvasEstudio3D" width="800" height="220" class="w-full h-48 rounded-lg bg-slate-950"></canvas>
+        </div>
+
+        <!-- Dynamic Parameter Table -->
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full text-xs text-left border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 text-slate-400 uppercase font-semibold">
+                <th class="py-2.5 px-3">Banda / Proceso</th>
+                <th class="py-2.5 px-3">Frecuencia</th>
+                <th class="py-2.5 px-3">Ganancia / Ajuste</th>
+                <th class="py-2.5 px-3">Q</th>
+                <th class="py-2.5 px-3">Qué resuelve (Descubrimiento en Mezcla)</th>
+              </tr>
+            </thead>
+            <tbody id="estudio3DTableBody" class="divide-y divide-slate-800/60 text-slate-300">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Song-Specific Presets Cards -->
+        <div class="pt-2">
+          <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-3 flex items-center gap-2">
+            <span>💿</span> Ajustes Específicos por Canción (Setlist Militia Inc.)
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+            <!-- Fuel -->
+            <div class="bg-slate-950 p-4 rounded-xl border border-amber-500/30 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-black text-amber-400 text-sm uppercase">🔥 01. FUEL</span>
+                <span class="text-[10px] font-mono bg-amber-500/10 text-amber-300 px-2 py-0.5 rounded">100% High-Gain</span>
+              </div>
+              <ul class="space-y-1.5 text-slate-300 leading-relaxed">
+                <li>• <strong>Guitarras (LPF 6.2 kHz):</strong> Corte agresivo de agudos a 6,000–6,200 Hz y notches en 3.35 kHz y 4.55 kHz (-4.5 dB) para quitar toda la saturación digital.</li>
+                <li>• <strong>Cuerpo Mesa Boogie:</strong> +2.5 dB en 700 Hz para peso en el riff principal.</li>
+                <li>• <strong>Voz:</strong> Corte en 420 Hz (-2.5 dB) + Doubler estéreo corto (11 ms L / 17 ms R).</li>
+              </ul>
+            </div>
+
+            <!-- Fade To Black -->
+            <div class="bg-slate-950 p-4 rounded-xl border border-cyan-500/30 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-black text-cyan-400 text-sm uppercase">❄️ 02. FADE TO BLACK</span>
+                <span class="text-[10px] font-mono bg-cyan-500/10 text-cyan-300 px-2 py-0.5 rounded">Acústica + Pesada</span>
+              </div>
+              <ul class="space-y-1.5 text-slate-300 leading-relaxed">
+                <li>• <strong>Guitarras Híbridas (LPF 10.5 kHz):</strong> ¡No cerrar el LPF a 6 kHz! Abrirlo a 10.5 kHz con +1.5 dB en 8 kHz para conservar el brillo cristalino de la acústica de 12 cuerdas en el intro, manteniendo los cortes anti-fizz en 3.35 kHz y 4.55 kHz.</li>
+                <li>• <strong>Bombo sin Clipping:</strong> Reducir -3.5 dB de entrada antes del EQ (+5 dB @ 58 Hz) para no saturar en el clímax final.</li>
+              </ul>
+            </div>
+
+            <!-- Wherever I May Roam -->
+            <div class="bg-slate-950 p-4 rounded-xl border border-emerald-500/30 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-black text-emerald-400 text-sm uppercase">🐍 03. WHEREVER I MAY ROAM</span>
+                <span class="text-[10px] font-mono bg-emerald-500/10 text-emerald-300 px-2 py-0.5 rounded">Black Album</span>
+              </div>
+              <ul class="space-y-1.5 text-slate-300 leading-relaxed">
+                <li>• <strong>Rescate de Bajo:</strong> Subir ganancia +4.5 dB en 85 Hz y +3.5 dB en 1.8 kHz (compresión 4:1) para que el bajo sostenga el riff lento.</li>
+                <li>• <strong>Limpieza de Guitarras:</strong> Cortar -3.5 dB en 175 Hz y -2.5 dB en 260 Hz para quitar la bola grave del palm-mute y dejar tronar el bombo y los toms (+4 dB @ 110 Hz).</li>
+                <li>• <strong>Voz Brillante:</strong> +3.5 dB en 2.85 kHz y +3.5 dB en 9.5 kHz.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- JAVASCRIPT LOGIC & CANVAS DRAWING -->
@@ -789,6 +904,7 @@
       if (sectionId === 'poncho') setTimeout(() => setPonchoView('guitar'), 50);
       if (sectionId === 'fer') setTimeout(drawFerCurve, 50);
       if (sectionId === 'bateria') setTimeout(() => setDrumView('kick'), 50);
+      if (sectionId === 'estudio3d') setTimeout(() => setEstudio3DView('v30'), 50);
     }
 
     function toggleMobileMenu() {
@@ -1145,6 +1261,153 @@
         drawPoint(ctx, freqToX(1800, width), dbToY(2, zeroY, height), "#10b981", "+2dB Caja 1.8kHz");
         drawPoint(ctx, freqToX(4500, width), dbToY(-2.5, zeroY, height), "#f43f5e", "-2.5dB Suavizar Platos");
         drawPoint(ctx, freqToX(10000, width), dbToY(2, zeroY, height), "#a855f7", "+2dB Aire 10kHz");
+      }
+    }
+
+    // ESTUDIO 3D CONTROLS (FUEL / FADE TO BLACK / WHEREVER I MAY ROAM)
+    function setEstudio3DView(view) {
+      const views = ['v30', 'hetfield', 'newsted', 'ulrich'];
+      views.forEach(v => {
+        const b = document.getElementById('btn-e3d-' + v);
+        if (b) {
+          b.className = "px-3 py-1.5 rounded-lg text-xs font-bold " +
+            (v === view ? "bg-amber-500 text-slate-950" : "bg-slate-800 text-slate-300");
+        }
+      });
+
+      const label = document.getElementById('estudio3DCanvasLabel');
+      const tbody = document.getElementById('estudio3DTableBody');
+      const setup = initCanvas('canvasEstudio3D');
+      if (!setup) return;
+      const { ctx, width, height, zeroY } = setup;
+
+      if (view === 'v30') {
+        label.innerText = "Curva Quirúrgica V3: Guitarras Anti-Saturación (Estilo Celestion V30)";
+        label.className = "text-xs font-bold text-amber-400 uppercase tracking-wider font-mono";
+        tbody.innerHTML = `
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">Low Cut (HPF)</td><td class="py-2 px-3 font-mono">95 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">18 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Limpia el subgrave para que el Bajo y el Bombo sean dueños del piso.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">Corte Palm-Mute</td><td class="py-2 px-3 font-mono">175 – 250 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">-3.0 dB</td><td class="py-2 px-3 font-mono">1.8</td><td class="py-2 px-3">Quita el retumbe cenagoso cuando mutean las cuerdas graves (clave en <em>Wherever</em>).</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">Cuerpo Mesa/Marshall</td><td class="py-2 px-3 font-mono">700 Hz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.5 dB</td><td class="py-2 px-3 font-mono">1.2</td><td class="py-2 px-3">Da peso real de madera y amplificador de bulbos sin saturar.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">Notches Anti-Abejas</td><td class="py-2 px-3 font-mono">3.35 kHz & 4.55 kHz</td><td class="py-2 px-3 text-rose-400 font-semibold">-4.5 dB</td><td class="py-2 px-3 font-mono">3.2</td><td class="py-2 px-3"><strong>¡El secreto!</strong> Elimina el chisporroteo y la estridencia digital de pedaleras/IA.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-amber-400">High Cut (LPF)</td><td class="py-2 px-3 font-mono">6.2 kHz (o 10.5 kHz)</td><td class="py-2 px-3 text-rose-400 font-semibold">Corte</td><td class="py-2 px-3">-</td><td class="py-2 px-3"><strong>6.2 kHz</strong> en temas 100% pesados (<em>Fuel/Wherever</em>); <strong>10.5 kHz</strong> si hay acústica de 12 cuerdas (<em>Fade To Black</em>).</td></tr>
+        `;
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "#f59e0b";
+        for (let px = 40; px < width - 15; px++) {
+          const ratio = (px - 40) / (width - 55);
+          const freq = Math.pow(10, Math.log10(20) + ratio * (Math.log10(20000) - Math.log10(20)));
+          let gain = 0;
+          if (freq < 95) gain -= Math.min(15, Math.pow(95 / freq, 2) * 3);
+          gain += -3.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(200)) / 0.2, 2));
+          gain += 2.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(700)) / 0.22, 2));
+          gain += 1.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(2100)) / 0.2, 2));
+          gain += -4.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(3350)) / 0.1, 2));
+          gain += -4.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(4550)) / 0.1, 2));
+          if (freq > 6500) gain -= Math.min(15, Math.pow(freq / 6500, 2) * 3);
+          const y = dbToY(gain, zeroY, height);
+          if (px === 40) ctx.moveTo(px, y); else ctx.lineTo(px, y);
+        }
+        ctx.stroke();
+        drawPoint(ctx, freqToX(95, width), dbToY(-3, zeroY, height), "#f59e0b", "HPF 95Hz");
+        drawPoint(ctx, freqToX(200, width), dbToY(-3, zeroY, height), "#f43f5e", "-3dB 200Hz");
+        drawPoint(ctx, freqToX(700, width), dbToY(2.5, zeroY, height), "#10b981", "+2.5dB 700Hz (Cuerpo)");
+        drawPoint(ctx, freqToX(3350, width), dbToY(-4.5, zeroY, height), "#f43f5e", "-4.5dB 3.35k/4.55k");
+        drawPoint(ctx, freqToX(6500, width), dbToY(-3, zeroY, height), "#f59e0b", "LPF 6.5kHz (V30)");
+      } else if (view === 'hetfield') {
+        label.innerText = "Curva Quirúrgica V3: Voz Principal Hetfield 3D (Presencia + Haas Cero Desfase)";
+        label.className = "text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono";
+        tbody.innerHTML = `
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Low Cut (HPF)</td><td class="py-2 px-3 font-mono">95 – 110 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">18 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Elimina golpes de tripié y vibraciones del escenario.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Centrado Tonal</td><td class="py-2 px-3 font-mono">250 Hz & 420 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">-3.0 dB</td><td class="py-2 px-3 font-mono">2.5</td><td class="py-2 px-3">Quita el sonido encajonado/nasal para que la voz suene limpia y afinada.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Ataque y Dicción</td><td class="py-2 px-3 font-mono">2.85 – 3.2 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+3.5 dB</td><td class="py-2 px-3 font-mono">1.3</td><td class="py-2 px-3">Hace que cada sílaba atraviese el muro de guitarras sin tener que gritar.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Aire de Estudio</td><td class="py-2 px-3 font-mono">9.5 – 10.5 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+3.0 dB (Shelf)</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Recupera el brillo en micrófonos dinámicos oscuros (como vimos en <em>Wherever</em>).</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-emerald-400">Doubler Haas 3D</td><td class="py-2 px-3 font-mono">200 Hz – 4 kHz</td><td class="py-2 px-3 text-cyan-400 font-semibold">11 ms L / 17 ms R</td><td class="py-2 px-3 font-mono">Mezcla 22%</td><td class="py-2 px-3"><strong>Cero Desfase:</strong> Engrosa la voz en estéreo dentro de la ventana Haas (&lt;18 ms) sin eco slapback.</td></tr>
+        `;
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "#10b981";
+        for (let px = 40; px < width - 15; px++) {
+          const ratio = (px - 40) / (width - 55);
+          const freq = Math.pow(10, Math.log10(20) + ratio * (Math.log10(20000) - Math.log10(20)));
+          let gain = 0;
+          if (freq < 95) gain -= Math.min(15, Math.pow(95 / freq, 2) * 3);
+          gain += -3.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(250)) / 0.18, 2));
+          gain += -3.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(420)) / 0.14, 2));
+          gain += 2.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(1350)) / 0.2, 2));
+          gain += 3.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(3000)) / 0.22, 2));
+          gain += -2.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(6800)) / 0.12, 2));
+          if (freq > 8000) gain += 3.0 * Math.min(1, (freq - 8000) / 3500);
+          const y = dbToY(gain, zeroY, height);
+          if (px === 40) ctx.moveTo(px, y); else ctx.lineTo(px, y);
+        }
+        ctx.stroke();
+        drawPoint(ctx, freqToX(95, width), dbToY(-3, zeroY, height), "#10b981", "HPF 95Hz");
+        drawPoint(ctx, freqToX(420, width), dbToY(-3, zeroY, height), "#f43f5e", "-3dB 250/420Hz");
+        drawPoint(ctx, freqToX(3000, width), dbToY(3.5, zeroY, height), "#10b981", "+3.5dB 3kHz (Presencia)");
+        drawPoint(ctx, freqToX(10000, width), dbToY(3.0, zeroY, height), "#10b981", "+3dB Aire 10kHz");
+      } else if (view === 'newsted') {
+        label.innerText = "Curva Quirúrgica V3: Bajo Black Album (Cimiento Sub 85 Hz + Mordida 1.8 kHz)";
+        label.className = "text-xs font-bold text-cyan-400 uppercase tracking-wider font-mono";
+        tbody.innerHTML = `
+          <tr><td class="py-2 px-3 font-semibold text-cyan-400">Low Cut (HPF)</td><td class="py-2 px-3 font-mono">35 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">18 dB/oct</td><td class="py-2 px-3">-</td><td class="py-2 px-3">Protege conos de 18" y concentra toda la energía útil arriba de 40 Hz.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-cyan-400">Cimiento Sub/Bajo</td><td class="py-2 px-3 font-mono">85 Hz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+4.5 dB</td><td class="py-2 px-3 font-mono">1.1</td><td class="py-2 px-3">Da el peso de estadio que abraza al golpe de 58 Hz del bombo.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-cyan-400">Limpieza de Fango</td><td class="py-2 px-3 font-mono">250 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">-3.5 dB</td><td class="py-2 px-3 font-mono">1.8</td><td class="py-2 px-3">Evita que el bajo embarre los acordes de las guitarras rítmicas.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-cyan-400">Gruñido Medio</td><td class="py-2 px-3 font-mono">750 Hz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+2.5 dB</td><td class="py-2 px-3 font-mono">1.4</td><td class="py-2 px-3">Hace que las notas del bajo se distingan incluso en celulares o bocinas chicas.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-cyan-400">Mordida de Púa/Traste</td><td class="py-2 px-3 font-mono">1.8 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+3.5 dB</td><td class="py-2 px-3 font-mono">1.4</td><td class="py-2 px-3">Ataque metálico estilo Jason Newsted / Steve Harris + Compresión 4:1.</td></tr>
+        `;
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "#06b6d4";
+        for (let px = 40; px < width - 15; px++) {
+          const ratio = (px - 40) / (width - 55);
+          const freq = Math.pow(10, Math.log10(20) + ratio * (Math.log10(20000) - Math.log10(20)));
+          let gain = 0;
+          if (freq < 35) gain -= Math.min(15, Math.pow(35 / freq, 2) * 3);
+          gain += 4.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(85)) / 0.22, 2));
+          gain += -3.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(250)) / 0.2, 2));
+          gain += 2.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(750)) / 0.2, 2));
+          gain += 3.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(1800)) / 0.2, 2));
+          if (freq > 4800) gain -= Math.min(15, Math.pow(freq / 4800, 2) * 3);
+          const y = dbToY(gain, zeroY, height);
+          if (px === 40) ctx.moveTo(px, y); else ctx.lineTo(px, y);
+        }
+        ctx.stroke();
+        drawPoint(ctx, freqToX(85, width), dbToY(4.5, zeroY, height), "#10b981", "+4.5dB 85Hz (Sub)");
+        drawPoint(ctx, freqToX(250, width), dbToY(-3.5, zeroY, height), "#f43f5e", "-3.5dB 250Hz");
+        drawPoint(ctx, freqToX(750, width), dbToY(2.5, zeroY, height), "#06b6d4", "+2.5dB 750Hz");
+        drawPoint(ctx, freqToX(1800, width), dbToY(3.5, zeroY, height), "#10b981", "+3.5dB 1.8kHz (Mordida)");
+      } else {
+        label.innerText = "Curva Quirúrgica V3: Batería Lars Ulrich (Bombo 58 Hz + Caja 185 Hz + Click 3.8 kHz)";
+        label.className = "text-xs font-bold text-purple-400 uppercase tracking-wider font-mono";
+        tbody.innerHTML = `
+          <tr><td class="py-2 px-3 font-semibold text-purple-400">Headroom Pre-EQ</td><td class="py-2 px-3 font-mono">Gain Input</td><td class="py-2 px-3 text-amber-400 font-semibold">-3.5 dB</td><td class="py-2 px-3">-</td><td class="py-2 px-3"><strong>Vital:</strong> Evita que el canal sature internamente al subir los graves de 58 Hz.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-purple-400">Pegada Sub Bombo</td><td class="py-2 px-3 font-mono">58 Hz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+5.0 dB</td><td class="py-2 px-3 font-mono">1.2</td><td class="py-2 px-3">Golpe físico en el pecho en los subwoofers de 18".</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-purple-400">Cuerpo de Tarola</td><td class="py-2 px-3 font-mono">185 Hz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+3.5 dB</td><td class="py-2 px-3 font-mono">1.3</td><td class="py-2 px-3">Le da el peso gordo de escopetazo a la caja estilo <em>Black Album</em>.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-purple-400">Corte Anti-Cartón</td><td class="py-2 px-3 font-mono">320 – 380 Hz</td><td class="py-2 px-3 text-rose-400 font-semibold">-5.0 dB</td><td class="py-2 px-3 font-mono">1.8</td><td class="py-2 px-3">Quita por completo el sonido hueco de caja de zapatos en bombo y toms.</td></tr>
+          <tr><td class="py-2 px-3 font-semibold text-purple-400">Click Maza / Entorchado</td><td class="py-2 px-3 font-mono">3.8 – 4.2 kHz</td><td class="py-2 px-3 text-emerald-400 font-semibold">+4.0 dB</td><td class="py-2 px-3 font-mono">1.4</td><td class="py-2 px-3">Definición metálica del golpe de bombo y latigazo de la tarola.</td></tr>
+        `;
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "#a855f7";
+        for (let px = 40; px < width - 15; px++) {
+          const ratio = (px - 40) / (width - 55);
+          const freq = Math.pow(10, Math.log10(20) + ratio * (Math.log10(20000) - Math.log10(20)));
+          let gain = 0;
+          if (freq < 30) gain -= Math.min(15, Math.pow(30 / freq, 2) * 3);
+          gain += 5.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(58)) / 0.2, 2));
+          gain += 3.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(185)) / 0.16, 2));
+          gain += -5.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(340)) / 0.2, 2));
+          gain += 4.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(3900)) / 0.2, 2));
+          if (freq > 12000) gain -= Math.min(15, Math.pow(freq / 12000, 2) * 2.5);
+          const y = dbToY(gain, zeroY, height);
+          if (px === 40) ctx.moveTo(px, y); else ctx.lineTo(px, y);
+        }
+        ctx.stroke();
+        drawPoint(ctx, freqToX(58, width), dbToY(5, zeroY, height), "#10b981", "+5dB 58Hz (Kick)");
+        drawPoint(ctx, freqToX(185, width), dbToY(3, zeroY, height), "#a855f7", "+3.5dB 185Hz (Caja)");
+        drawPoint(ctx, freqToX(340, width), dbToY(-5, zeroY, height), "#f43f5e", "-5dB 340Hz (Anti-Cartón)");
+        drawPoint(ctx, freqToX(3900, width), dbToY(4, zeroY, height), "#10b981", "+4dB 3.9kHz (Click)");
       }
     }
   </script>
