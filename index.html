@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía Visual de Ecualización & Mezcla XR18 - Rock & Heavy Metal</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(150, 150, 150, 0.3);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-4 md:p-8">
+  <div class="max-w-5xl mx-auto space-y-6">
+
+    <!-- Header / Title -->
+    <header class="border-b border-slate-800 pb-5">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-2">
+            🎸 Edición Especial: Rock Clásico & Heavy Metal (Metallica / Iron Maiden)
+          </span>
+          <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
+            Guía Visual de Ecualización & Mezcla en Behringer XR18
+          </h1>
+          <p class="text-sm text-slate-400 mt-1">
+            Setup: 4 integrantes | 2 Voces/Guitarras alternantes (NAM directo) | Bajo + Subs 18" | Tops JBL
+          </p>
+        </div>
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-2 text-right">
+          <div class="text-xs text-slate-400">Consola objetivo</div>
+          <div class="text-sm font-bold text-amber-400">Behringer X-Air XR18</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Top Strategy Banner: The 2-Vocalist XR18 Secret Trick -->
+    <section class="bg-gradient-to-r from-amber-950/40 via-slate-900 to-slate-900 border border-amber-500/30 rounded-2xl p-5 shadow-lg">
+      <div class="flex items-start gap-4">
+        <div class="p-3 bg-amber-500/20 text-amber-400 rounded-xl font-black text-xl">💡</div>
+        <div>
+          <h3 class="text-base font-bold text-amber-300">
+            El secreto para sus 2 voces que alternan Líder y Coros sin volverse locos: "Split Virtual"
+          </h3>
+          <p class="text-sm text-slate-300 mt-1 leading-relaxed">
+            En la <strong>XR18</strong> no necesitas cambiar de escena todo el tiempo arriesgando desfases. Puedes rutear la <strong>misma entrada física de micrófono a dos canales independientes</strong>:
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3 text-xs">
+            <div class="bg-slate-950/70 p-3 rounded-lg border border-slate-800">
+              <span class="text-amber-400 font-bold block mb-1">Micro Guitarrista 1 (Físico Input 1):</span>
+              <ul class="space-y-1 text-slate-300 list-disc list-inside">
+                <li><strong>Canal 1 ("Voz 1 LÍDER"):</strong> Fader a 0 dB, EQ con presencia en 3-4 kHz, compresor 3:1, reverb amplia.</li>
+                <li><strong>Canal 2 ("Voz 1 CORO"):</strong> Fader a -4 dB, corte en 3 kHz (-2.5dB), HPF en 150 Hz, paneo L25.</li>
+              </ul>
+            </div>
+            <div class="bg-slate-950/70 p-3 rounded-lg border border-slate-800">
+              <span class="text-amber-400 font-bold block mb-1">Micro Guitarrista 2 (Físico Input 2):</span>
+              <ul class="space-y-1 text-slate-300 list-disc list-inside">
+                <li><strong>Canal 3 ("Voz 2 LÍDER"):</strong> Configurado con cuerpo y presencia principal al centro.</li>
+                <li><strong>Canal 4 ("Voz 2 CORO"):</strong> Atenuado, filtrado y paneado R25 para abrir el estéreo.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-xs text-amber-200/80 mt-2 italic">
+            * Con un botón de Mute (o con un Mute Group / escena simple que solo mutea Canales 1 vs 2) la voz pasa instantáneamente de "rugir al frente" a "colocarse detrás sin tapar".
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <div class="flex flex-wrap gap-2 border-b border-slate-800 pb-3" id="tabContainer">
+      <button onclick="switchTab('voces')" id="btn-voces" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-amber-500 text-slate-950 shadow-md">
+        🎤 Voces (Líder vs Coros)
+      </button>
+      <button onclick="switchTab('guitarras')" id="btn-guitarras" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300">
+        🎸 Guitarras Eléctricas (NAM Directo)
+      </button>
+      <button onclick="switchTab('bajo')" id="btn-bajo" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300">
+        🎸 Bajo & Subs de 18"
+      </button>
+      <button onclick="switchTab('bateria')" id="btn-bateria" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300">
+        🥁 Batería Rock/Metal
+      </button>
+      <button onclick="switchTab('master')" id="btn-master" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300">
+        🎚️ Master, Efectos & Dinámica
+      </button>
+    </div>
+
+    <!-- MAIN CONTENT SECTIONS -->
+
+    <!-- 1. VOCES -->
+    <div id="content-voces" class="tab-content space-y-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+              <span>🎤</span> Voces en Hard Rock / Metal: Contraste Líder vs. Coro
+            </h2>
+            <p class="text-xs text-slate-400">
+              En estilos como Metallica y Maiden, la voz líder debe cortar la muralla de guitarras con distorsión, y los coros deben sostener el estribillo sin pelear en la misma frecuencia.
+            </p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="drawVoiceLead()" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white">
+              Curva: Voz Líder
+            </button>
+            <button onclick="drawVoiceBacking()" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-600 hover:bg-amber-500 text-white">
+              Curva: Coros (Backing)
+            </button>
+          </div>
+        </div>
+
+        <!-- Canvas EQ Curve Display -->
+        <div class="relative bg-slate-950 border border-slate-800 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-2 px-1">
+            <span id="voiceCurveLabel" class="text-xs font-bold text-emerald-400 uppercase tracking-wider">
+              Visualización: Curva Ecualización PEQ - Voz Líder
+            </span>
+            <span class="text-[11px] text-slate-500 font-mono">20Hz – 20kHz (-12dB a +12dB)</span>
+          </div>
+          <canvas id="canvasVoices" width="800" height="230" class="w-full h-48 rounded-lg bg-slate-950"></canvas>
+        </div>
+
+        <!-- Parameter Breakdown Table -->
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full text-xs text-left border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 text-slate-400 uppercase font-semibold">
+                <th class="py-2.5 px-3">Banda XR18</th>
+                <th class="py-2.5 px-3">Ajuste / Tipo</th>
+                <th class="py-2.5 px-3">Frecuencia</th>
+                <th class="py-2.5 px-3">Ganancia / Q</th>
+                <th class="py-2.5 px-3">Propósito en Rock/Metal</th>
+              </tr>
+            </thead>
+            <tbody id="voiceTableBody" class="divide-y divide-slate-800/60 text-slate-300">
+              <!-- Dynamically populated or defaults to Lead -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
+            <h4 class="text-xs font-bold text-amber-400 uppercase mb-1">Compresor XR18 para la Voz Líder</h4>
+            <ul class="text-xs space-y-1 text-slate-300">
+              <li>• <strong>Threshold:</strong> Que comprima -3 a -6 dB en los gritos más fuertes.</li>
+              <li>• <strong>Ratio:</strong> 3.5:1 o 4:1 (controla la dinámica del metal).</li>
+              <li>• <strong>Attack:</strong> 15 - 25 ms (permite pasar la consonante para que se entienda la letra).</li>
+              <li>• <strong>Release:</strong> 100 - 150 ms (recuperación musical rápida).</li>
+            </ul>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
+            <h4 class="text-xs font-bold text-blue-400 uppercase mb-1">Efecto Maestro: Reverb & Delay de Solos</h4>
+            <ul class="text-xs space-y-1 text-slate-300">
+              <li>• <strong>Voz Principal:</strong> Plate Reverb corta (1.4s) + Tap Delay en negras (1/4 note) con feedback bajo (15-20%) para dar esa profundidad épica tipo Bruce Dickinson.</li>
+              <li>• <strong>Coros:</strong> Reverb más mojada (2.0s) pero <strong>sin delay</strong>, así se quedan naturalmente atrás en el plano sonoro.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. GUITARRAS ELECTRICAS (NAM DIRECTO) -->
+    <div id="content-guitarras" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-4">
+        <div>
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span>🎸</span> Guitarras Directas con NAM / Modeladores Digitales
+          </h2>
+          <p class="text-xs text-slate-400">
+            El mayor peligro de los modeladores digitales (NAM, Quad Cortex, Helix) al entrar directos a la XR18 es sonar con "avispero" en agudos y saturar el rango del bajo. Aquí está la curva de domesticación para directo:
+          </p>
+        </div>
+
+        <!-- Canvas EQ Guitar -->
+        <div class="relative bg-slate-950 border border-slate-800 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-2 px-1">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">
+              Curva XR18 para Guitarras High-Gain (Corte Metallica/Maiden)
+            </span>
+            <span class="text-[11px] text-slate-500 font-mono">Cortes HPF/LPF Quirúrgicos</span>
+          </div>
+          <canvas id="canvasGuitar" width="800" height="230" class="w-full h-48 rounded-lg bg-slate-950"></canvas>
+        </div>
+
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full text-xs text-left border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 text-slate-400 uppercase font-semibold">
+                <th class="py-2.5 px-3">Banda</th>
+                <th class="py-2.5 px-3">Frecuencia</th>
+                <th class="py-2.5 px-3">Ajuste</th>
+                <th class="py-2.5 px-3">Q (Ancho)</th>
+                <th class="py-2.5 px-3">Explicación técnica</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="py-2 px-3 font-semibold text-amber-400">Low Cut (HPF)</td>
+                <td class="py-2 px-3 font-mono">90 - 100 Hz</td>
+                <td class="py-2 px-3 font-semibold text-emerald-400">Corte 12 o 18 dB/oct</td>
+                <td class="py-2 px-3">-</td>
+                <td class="py-2 px-3">Elimina el zumbido de subgrave que compite con el bombo y las cuerdas graves del bajo.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-semibold text-amber-400">Banda 1 (Low-Mid)</td>
+                <td class="py-2 px-3 font-mono">220 - 280 Hz</td>
+                <td class="py-2 px-3 font-semibold text-rose-400">-2.5 a -3.5 dB</td>
+                <td class="py-2 px-3 font-mono">1.4</td>
+                <td class="py-2 px-3">Quita la "caja" y la acumulación densa al hacer palm-muting estilo Metallica. Deja respirar la caja (tarola).</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-semibold text-amber-400">Banda 2 (Mid-Punch)</td>
+                <td class="py-2 px-3 font-mono">800 Hz - 1.2 kHz</td>
+                <td class="py-2 px-3 font-semibold text-emerald-400">+1.5 a +2.0 dB</td>
+                <td class="py-2 px-3 font-mono">1.2</td>
+                <td class="py-2 px-3">El verdadero cuerpo de la guitarra de heavy rock. Si te falta presencia en la mezcla, dale aquí en lugar de agudos.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-semibold text-amber-400">Banda 3 (Anti-Chillido)</td>
+                <td class="py-2 px-3 font-mono">3.2 - 4.0 kHz</td>
+                <td class="py-2 px-3 font-semibold text-rose-400">-2.0 dB</td>
+                <td class="py-2 px-3 font-mono">2.5 (estrecho)</td>
+                <td class="py-2 px-3">Hace espacio crucial para que las voces corten limpiamente sin tener que gritar por encima de los amplis.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-semibold text-amber-400">High Cut (LPF)</td>
+                <td class="py-2 px-3 font-mono">6.5 - 7.5 kHz</td>
+                <td class="py-2 px-3 font-semibold text-rose-400">High Shelf / Cut</td>
+                <td class="py-2 px-3">-</td>
+                <td class="py-2 px-3"><strong>¡Vital para NAM/modeladores!</strong> Un altavoz de guitarra real (Celestion V30) casi no emite nada arriba de 7kHz. Todo lo que hay arriba es "fritura" digital hiriente.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Stereo Separation Advice -->
+        <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl">
+          <h4 class="text-sm font-bold text-amber-300 flex items-center gap-2">
+            <span>🛡️</span> El Paneo Estéreo para 2 Guitarras: El muro de sonido Maiden
+          </h4>
+          <p class="text-xs text-slate-300 mt-1">
+            Como son 2 guitarras, nunca las dejes ambas al centro:
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2 text-xs">
+            <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
+              <strong class="text-amber-400">Guitarra 1:</strong> Paneo <strong>L60% a L75%</strong>.
+            </div>
+            <div class="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
+              <strong class="text-amber-400">Guitarra 2:</strong> Paneo <strong>R60% a R75%</strong>.
+            </div>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-2">
+            Esto deja el centro completamente libre para: <strong>Bombo, Bajo y la Voz Líder</strong>. ¡La claridad se multiplicará al instante!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. BAJO & SUBS DE 18" -->
+    <div id="content-bajo" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-4">
+        <div>
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span>🔊</span> El Matrimonio Bajo + Subwoofers de 18" + Bombo
+          </h2>
+          <p class="text-xs text-slate-400">
+            Con subs de 18" tienes potencia de sobra para que retumbe el pecho. El secreto no es darles más graves, sino repartir las frecuencias para que el bombo y el bajo no se anulen mutuamente.
+          </p>
+        </div>
+
+        <!-- Canvas EQ Bass -->
+        <div class="relative bg-slate-950 border border-slate-800 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-2 px-1">
+            <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider">
+              Curva de Ecualización XR18 - Bajo Eléctrico Rock/Metal
+            </span>
+            <span class="text-[11px] text-slate-500 font-mono">Tono Steve Harris / Cliff Burton</span>
+          </div>
+          <canvas id="canvasBass" width="800" height="230" class="w-full h-48 rounded-lg bg-slate-950"></canvas>
+        </div>
+
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full text-xs text-left border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 text-slate-400 uppercase font-semibold">
+                <th class="py-2.5 px-3">Frecuencia</th>
+                <th class="py-2.5 px-3">Ajuste</th>
+                <th class="py-2.5 px-3">Q</th>
+                <th class="py-2.5 px-3">¿Para qué sirve en vivo?</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 text-slate-300">
+              <tr>
+                <td class="py-2 px-3 font-mono text-cyan-400">HPF @ 40 Hz</td>
+                <td class="py-2 px-3 font-semibold text-rose-400">Corte 18 dB/oct</td>
+                <td class="py-2 px-3">-</td>
+                <td class="py-2 px-3">Protege tus conos de 18" de vibraciones inaudibles pero que gastan energía de amplificación y causan distorsión mecánica.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono text-cyan-400">60 - 70 Hz</td>
+                <td class="py-2 px-3 font-semibold text-rose-400">-3 dB (Hueco)</td>
+                <td class="py-2 px-3 font-mono">1.8</td>
+                <td class="py-2 px-3"><strong>¡Aquí vive el golpe del bombo!</strong> Si abres este hueco en el bajo, cada patada del bombo se sentirá como un puñetazo nítido en el pecho.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono text-cyan-400">100 - 130 Hz</td>
+                <td class="py-2 px-3 font-semibold text-emerald-400">+2.5 dB</td>
+                <td class="py-2 px-3 font-mono">1.4</td>
+                <td class="py-2 px-3">El peso y la definición de las notas del bajo. Hace que el bajo se escuche redondo y melódico.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono text-cyan-400">400 - 500 Hz</td>
+                <td class="py-2 px-3 font-semibold text-rose-400">-3 dB</td>
+                <td class="py-2 px-3 font-mono">1.5</td>
+                <td class="py-2 px-3">Zona "acartonada". Limpia la suciedad para que las guitarras rítmicas suenen limpias.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-mono text-cyan-400">2.5 kHz</td>
+                <td class="py-2 px-3 font-semibold text-emerald-400">+3 dB</td>
+                <td class="py-2 px-3 font-mono">1.6</td>
+                <td class="py-2 px-3"><strong>Ataque de la uña / trasteo estilo Steve Harris (Iron Maiden).</strong> Si quieres que el bajo se entienda en teléfonos o en los tops JBL, este brillo metálico es obligatorio.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+          <h4 class="text-xs font-bold text-cyan-400 uppercase mb-1">Compresión del Bajo en XR18</h4>
+          <p class="text-xs text-slate-300">
+            Un bajo de metal sin compresión salta de volumen constantemente al pasar de tocar con púa suave a apretar cuerdas:
+            <br>
+            • <strong>Ratio:</strong> 4:1 o 5:1 | <strong>Threshold:</strong> Reducción constante de -4 a -7 dB | <strong>Attack:</strong> 30 ms (mantiene el 'clic' inicial de la nota) | <strong>Release:</strong> 120 ms.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. BATERIA ROCK/METAL -->
+    <div id="content-bateria" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-4">
+        <div>
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span>🥁</span> Batería Contundente y Definida
+          </h2>
+          <p class="text-xs text-slate-400">
+            Ajustes para que la batería suene pesada y moderna a través de tus bocinas JBL:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- BOMBO -->
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-emerald-400">🥁 Bombo (Kick)</span>
+              <span class="text-[10px] bg-emerald-500/10 text-emerald-300 px-2 py-0.5 rounded font-mono">Subs 18" + Click</span>
+            </div>
+            <ul class="text-xs space-y-2 text-slate-300">
+              <li>• <strong>55 - 65 Hz (+3 dB):</strong> El subgrave que hace vibrar el piso con los 18".</li>
+              <li>• <strong>300 - 400 Hz (-5 dB, Q:1.5):</strong> <em>Imprescindible</em>. Quita el sonido a "caja de cartón vacía".</li>
+              <li>• <strong>3.5 - 4.5 kHz (+4 dB):</strong> El clic de la maza (tipo Lars Ulrich) para escucharlo en medio de las guitarras.</li>
+              <li>• <strong>Gate (Puerta):</strong> Configura la puerta de ruido para que el micro no capte el zumbido de los toms ni los platillos.</li>
+            </ul>
+          </div>
+
+          <!-- TAROLA / CAJA -->
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-amber-400">⚡ Tarola / Caja (Snare)</span>
+              <span class="text-[10px] bg-amber-500/10 text-amber-300 px-2 py-0.5 rounded font-mono">Pegada Rock</span>
+            </div>
+            <ul class="text-xs space-y-2 text-slate-300">
+              <li>• <strong>HPF @ 80 Hz:</strong> Corta todo por debajo para evitar retumbes.</li>
+              <li>• <strong>180 - 220 Hz (+2 dB):</strong> El peso gordo ("thud") del golpe al centro.</li>
+              <li>• <strong>800 - 900 Hz (-2.5 dB):</strong> Quita resonancia plástica y hueca.</li>
+              <li>• <strong>4 - 5 kHz (+3 dB):</strong> El chasquido y filo del entorchado.</li>
+              <li>• <strong>Reverb:</strong> Envía un toque a la reverb 'Vintage Room' de la XR18 para darle tamaño.</li>
+            </ul>
+          </div>
+
+          <!-- TOMS -->
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-blue-400">🪘 Toms (Rack & Floor)</span>
+              <span class="text-[10px] bg-blue-500/10 text-blue-300 px-2 py-0.5 rounded font-mono">Ataque y Resonancia</span>
+            </div>
+            <ul class="text-xs space-y-2 text-slate-300">
+              <li>• <strong>HPF @ 70 Hz (Rack) / 50 Hz (Floor):</strong> Evita que retumben innecesariamente.</li>
+              <li>• <strong>500 Hz (-4 dB):</strong> Limpieza profunda del sonido hueco.</li>
+              <li>• <strong>3 kHz - 4 kHz (+2.5 dB):</strong> Ataque del golpe de la baqueta sobre el parche.</li>
+              <li>• <strong>Gate estricto:</strong> Mantén los toms cerrados hasta que el baterista los golpee.</li>
+            </ul>
+          </div>
+
+          <!-- PLATOS / OVERHEADS -->
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-bold text-purple-400">✨ Overheads / Platos</span>
+              <span class="text-[10px] bg-purple-500/10 text-purple-300 px-2 py-0.5 rounded font-mono">Aire sin Sangrado</span>
+            </div>
+            <ul class="text-xs space-y-2 text-slate-300">
+              <li>• <strong>HPF @ 350 - 450 Hz (Alto):</strong> ¡Crucial en vivo! No dejes que los micrófonos de arriba recojan el bombo y la caja del escenario.</li>
+              <li>• <strong>3 kHz (-2 dB):</strong> Suaviza el chillido estridente de los crashes baratos o muy duros.</li>
+              <li>• <strong>10 kHz (+2 dB High Shelf):</strong> Brillo sedoso y definición del hi-hat y ride.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. MASTER & XR18 ROUTING -->
+    <div id="content-master" class="tab-content hidden space-y-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-4">
+        <div>
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span>🎚️</span> Ruteo Maestro, Crossover & Efectos en la XR18
+          </h2>
+          <p class="text-xs text-slate-400">
+            Cómo conectar y calibrar los Tops JBL con los Subwoofers de 18" usando las salidas físicas de la XR18:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Crossover Aux / Main -->
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+            <h4 class="text-sm font-bold text-emerald-400">Técnica Recomendada: Subs por Aux (Bus 6)</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              En lugar de mandar toda la mezcla al subwoofer y dejar que el filtro de la bocina haga el trabajo, conecta los <strong>Subs de 18" a Aux 6 (Bus 6)</strong> y los <strong>Tops JBL a Main L/R</strong>:
+            </p>
+            <ul class="text-xs space-y-1.5 text-slate-300 list-disc list-inside">
+              <li><strong>Solo envía al Subwoofer (Bus 6):</strong> Bombo y Bajo.</li>
+              <li><strong>No envíes al Subwoofer:</strong> Voces, guitarras, teclados ni platos.</li>
+              <li><strong>Resultado:</strong> Desaparece por completo el acople o "hum" grave en los micrófonos de voz y las bocinas de 18" rinden al 100% solo para empujar la base rítmica.</li>
+            </ul>
+          </div>
+
+          <!-- FX Slot configuration -->
+          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+            <h4 class="text-sm font-bold text-amber-400">Asignación Óptima de los 4 Slots FX en XR18</h4>
+            <ul class="text-xs space-y-2 text-slate-300">
+              <li class="p-2 bg-slate-900 rounded border border-slate-800/80">
+                <span class="text-amber-400 font-bold">FX 1 - Rich Plate Reverb:</span> Para las voces (Decay 1.5s, Pre-delay 25ms, HPF 200Hz).
+              </li>
+              <li class="p-2 bg-slate-900 rounded border border-slate-800/80">
+                <span class="text-amber-400 font-bold">FX 2 - Stereo Delay:</span> Con tap tempo en negras o corcheas con puntillo para solos de guitarra y momentos épicos de voz.
+              </li>
+              <li class="p-2 bg-slate-900 rounded border border-slate-800/80">
+                <span class="text-amber-400 font-bold">FX 3 - Vintage Room / Hall:</span> Sutil para la tarola y toms de la batería.
+              </li>
+              <li class="p-2 bg-slate-900 rounded border border-slate-800/80">
+                <span class="text-amber-400 font-bold">FX 4 - Stereo Precision Limiter / GEQ:</span> Insertado en el Main L/R para proteger las bocinas JBL de picos inesperados.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Master EQ Settings -->
+        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+          <h4 class="text-xs font-bold text-slate-300 uppercase">Ajuste de Master L/R (Ecualizador Gráfico / Paramétrico de Salida)</h4>
+          <p class="text-xs text-slate-400">
+            Antes de tocar canales individuales si la sala suena molesta, aplica estos 2 ajustes rápidos en la salida Main:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div class="bg-slate-900 p-2.5 rounded border border-slate-800">
+              <span class="text-rose-400 font-bold block">HPF Master @ 32 Hz</span>
+              Quita retumbes subsónicos del escenario que comen potencia sin escucharse.
+            </div>
+            <div class="bg-slate-900 p-2.5 rounded border border-slate-800">
+              <span class="text-rose-400 font-bold block">Dip en 2.5 - 3.15 kHz (-1.5 dB)</span>
+              Suaviza la fatiga auditiva típica de salas con paredes de concreto o azulejo.
+            </div>
+            <div class="bg-slate-900 p-2.5 rounded border border-slate-800">
+              <span class="text-rose-400 font-bold block">Dip en 250 - 300 Hz (-2 dB)</span>
+              Limpia la "bola" general en salas cerradas sin tratamiento acústico.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Reference Card at Bottom -->
+    <footer class="text-center text-xs text-slate-500 py-3 border-t border-slate-800/60">
+      Guía configurada específicamente para el ecosistema Behringer X-Air (XR18) | Guardada para tu consulta rápida en ensayos y bolos en vivo.
+    </footer>
+  </div>
+
+  <script>
+    // Tab switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-md');
+        btn.classList.add('bg-slate-900', 'text-slate-300');
+      });
+
+      const selectedContent = document.getElementById('content-' + tabId);
+      const selectedBtn = document.getElementById('btn-' + tabId);
+
+      if (selectedContent) selectedContent.classList.remove('hidden');
+      if (selectedBtn) {
+        selectedBtn.classList.add('bg-amber-500', 'text-slate-950', 'shadow-md');
+        selectedBtn.classList.remove('bg-slate-900', 'text-slate-300');
+      }
+
+      // Redraw canvases on tab show
+      if (tabId === 'voces') setTimeout(drawVoiceLead, 50);
+      if (tabId === 'guitarras') setTimeout(drawGuitarCurve, 50);
+      if (tabId === 'bajo') setTimeout(drawBassCurve, 50);
+    }
+
+    // Canvas EQ Drawer Helper
+    function initCanvas(canvasId) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas) return null;
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+      const height = canvas.height;
+      const zeroY = height / 2;
+
+      // Clear & Background
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = "#020617";
+      ctx.fillRect(0, 0, width, height);
+
+      // Grid Lines
+      ctx.strokeStyle = "rgba(51, 65, 85, 0.4)";
+      ctx.lineWidth = 1;
+
+      // dB horizontal lines (-12, -6, 0, +6, +12)
+      [-12, -6, 0, 6, 12].forEach(db => {
+        const y = zeroY - (db / 15) * (height / 2 - 20);
+        ctx.beginPath();
+        ctx.moveTo(40, y);
+        ctx.lineTo(width - 15, y);
+        ctx.stroke();
+
+        ctx.fillStyle = db === 0 ? "#94a3b8" : "#475569";
+        ctx.font = "9px monospace";
+        ctx.fillText((db > 0 ? "+" : "") + db + " dB", 8, y + 3);
+      });
+
+      // Frequency vertical lines (100, 250, 1k, 3k, 10k)
+      const freqs = [
+        { f: 50, label: "50" },
+        { f: 100, label: "100" },
+        { f: 250, label: "250" },
+        { f: 500, label: "500" },
+        { f: 1000, label: "1k" },
+        { f: 3000, label: "3k" },
+        { f: 10000, label: "10k" },
+        { f: 20000, label: "20k" }
+      ];
+
+      freqs.forEach(item => {
+        const x = freqToX(item.f, width);
+        ctx.beginPath();
+        ctx.moveTo(x, 15);
+        ctx.lineTo(x, height - 20);
+        ctx.stroke();
+
+        ctx.fillStyle = "#475569";
+        ctx.font = "9px monospace";
+        ctx.fillText(item.label, x - 8, height - 6);
+      });
+
+      return { ctx, width, height, zeroY };
+    }
+
+    // Convert frequency (log scale 20Hz - 20kHz) to Canvas X
+    function freqToX(freq, width) {
+      const minLog = Math.log10(20);
+      const maxLog = Math.log10(20000);
+      const margin = 40;
+      const usableWidth = width - margin - 20;
+      const fLog = Math.log10(Math.max(20, Math.min(20000, freq)));
+      return margin + ((fLog - minLog) / (maxLog - minLog)) * usableWidth;
+    }
+
+    function dbToY(db, zeroY, height) {
+      const scale = (height / 2 - 20) / 15;
+      return zeroY - (db * scale);
+    }
+
+    // Draw Voice Lead
+    function drawVoiceLead() {
+      const label = document.getElementById('voiceCurveLabel');
+      if (label) {
+        label.innerText = "Visualización: Curva Ecualización PEQ - Voz Líder (Frontal & Claridad)";
+        label.className = "text-xs font-bold text-emerald-400 uppercase tracking-wider";
+      }
+
+      // Update table
+      const tbody = document.getElementById('voiceTableBody');
+      tbody.innerHTML = `
+        <tr>
+          <td class="py-2 px-3 font-semibold text-emerald-400">HPF (Low Cut)</td>
+          <td class="py-2 px-3">Filtro Pasa Altos</td>
+          <td class="py-2 px-3 font-mono">100 - 120 Hz</td>
+          <td class="py-2 px-3">12 dB/oct</td>
+          <td class="py-2 px-3">Corta ruidos mecánicos de atril o golpes de mano sin quitar el cuerpo del cantante masculino.</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-3 font-semibold text-emerald-400">Low (Banda 1)</td>
+          <td class="py-2 px-3">Cuerpo / Limpieza</td>
+          <td class="py-2 px-3 font-mono">250 - 300 Hz</td>
+          <td class="py-2 px-3 font-mono text-rose-400">-1.5 dB (Q: 1.4)</td>
+          <td class="py-2 px-3">Ligera atenuación para quitar opacidad ("efecto proximidad" de pegarse al micro).</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-3 font-semibold text-emerald-400">Mid (Banda 2)</td>
+          <td class="py-2 px-3">Presencia / Mordida</td>
+          <td class="py-2 px-3 font-mono">3.2 - 3.8 kHz</td>
+          <td class="py-2 px-3 font-mono text-emerald-400">+2.5 dB (Q: 1.2)</td>
+          <td class="py-2 px-3"><strong>La zona mágica del metal.</strong> Aquí corta las guitarras distorsionadas y la batería sin subir fader.</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-3 font-semibold text-emerald-400">High (Banda 4)</td>
+          <td class="py-2 px-3">Aire (High Shelf)</td>
+          <td class="py-2 px-3 font-mono">10 kHz</td>
+          <td class="py-2 px-3 font-mono text-emerald-400">+1.5 dB (Shelf)</td>
+          <td class="py-2 px-3">Apertura y brillo profesional (cuidado si el micro es brillante de fábrica como un Beta58).</td>
+        </tr>
+      `;
+
+      const setup = initCanvas('canvasVoices');
+      if (!setup) return;
+      const { ctx, width, height, zeroY } = setup;
+
+      // Draw Lead curve
+      ctx.beginPath();
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = "#10b981";
+
+      for (let px = 40; px < width - 15; px++) {
+        const ratio = (px - 40) / (width - 55);
+        const freq = Math.pow(10, Math.log10(20) + ratio * (Math.log10(20000) - Math.log10(20)));
+
+        let gain = 0;
+        // HPF around 110 Hz
+        if (freq < 110) {
+          gain -= Math.min(15, Math.pow(110 / freq, 2) * 3);
+        }
+        // Small dip at 280 Hz
+        gain += -1.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(280)) / 0.25, 2));
+        // Boost at 3.5 kHz (+2.5 dB)
+        gain += 2.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(3500)) / 0.25, 2));
+        // Shelf at 10 kHz (+1.5 dB)
+        if (freq > 7000) {
+          gain += 1.5 * Math.min(1, (freq - 7000) / 4000);
+        }
+
+        const y = dbToY(gain, zeroY, height);
+        if (px === 40) ctx.moveTo(px, y);
+        else ctx.lineTo(px, y);
+      }
+      ctx.stroke();
+
+      // Draw Key control points
+      drawPoint(ctx, freqToX(110, width), dbToY(-3, zeroY, height), "#10b981", "HPF 110Hz");
+      drawPoint(ctx, freqToX(280, width), dbToY(-1.5, zeroY, height), "#f43f5e", "-1.5dB @ 280Hz");
+      drawPoint(ctx, freqToX(3500, width), dbToY(2.5, zeroY, height), "#10b981", "+2.5dB @ 3.5kHz (Líder)");
+      drawPoint(ctx, freqToX(10000, width), dbToY(1.5, zeroY, height), "#10b981", "+1.5dB Aire");
+    }
+
+    // Draw Voice Backing (Coros)
+    function drawVoiceBacking() {
+      const label = document.getElementById('voiceCurveLabel');
+      if (label) {
+        label.innerText = "Visualización: Curva Ecualización PEQ - Coros (Colocación Detrás)";
+        label.className = "text-xs font-bold text-amber-400 uppercase tracking-wider";
+      }
+
+      // Update table with book recommendations
+      const tbody = document.getElementById('voiceTableBody');
+      tbody.innerHTML = `
+        <tr>
+          <td class="py-2 px-3 font-semibold text-amber-400">HPF (Low Cut)</td>
+          <td class="py-2 px-3">Filtro Pasa Altos</td>
+          <td class="py-2 px-3 font-mono">150 Hz</td>
+          <td class="py-2 px-3">12 dB/oct</td>
+          <td class="py-2 px-3">Los coros no necesitan peso grave; despeja completamente el fondo para bajo y voz líder.</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-3 font-semibold text-amber-400">Banda 1 (Barro)</td>
+          <td class="py-2 px-3">Limpieza de conjunto</td>
+          <td class="py-2 px-3 font-mono">250 Hz</td>
+          <td class="py-2 px-3 font-mono text-rose-400">-3.0 dB (Q: 1.0)</td>
+          <td class="py-2 px-3">Al sumar varias voces o coros se crea "bola" pastosa. Esta atenuación mantiene la mezcla limpia.</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-3 font-semibold text-amber-400">Banda 2 (Espacio Líder)</td>
+          <td class="py-2 px-3">Hueco para el líder</td>
+          <td class="py-2 px-3 font-mono">3.0 kHz</td>
+          <td class="py-2 px-3 font-mono text-rose-400">-2.0 dB (Q: 1.2)</td>
+          <td class="py-2 px-3"><strong>¡La clave de la imagen de tu libro!</strong> Al bajar aquí los coros, la voz principal brilla sin esfuerzo.</td>
+        </tr>
+        <tr>
+          <td class="py-2 px-3 font-semibold text-amber-400">High Shelf</td>
+          <td class="py-2 px-3">Aire suave</td>
+          <td class="py-2 px-3 font-mono">10 kHz</td>
+          <td class="py-2 px-3 font-mono text-emerald-400">+1.0 dB (Shelf)</td>
+          <td class="py-2 px-3">Da sensación de apertura y profundidad atrás sin hacer estridente la voz.</td>
+        </tr>
+      `;
+
+      const setup = initCanvas('canvasVoices');
+      if (!setup) return;
+      const { ctx, width, height, zeroY } = setup;
+
+      // Draw Backing curve
+      ctx.beginPath();
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = "#f59e0b";
+
+      for (let px = 40; px < width - 15; px++) {
+        const ratio = (px - 40) / (width - 55);
+        const freq = Math.pow(10, Math.log10(20) + ratio * (Math.log10(20000) - Math.log10(20)));
+
+        let gain = 0;
+        // HPF around 150 Hz
+        if (freq < 150) {
+          gain -= Math.min(15, Math.pow(150 / freq, 2) * 3);
+        }
+        // Mud dip at 250 Hz (-3 dB, Q: 1.0)
+        gain += -3.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(250)) / 0.3, 2));
+        // Dip at 3 kHz (-2.0 dB, Q: 1.2)
+        gain += -2.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(3000)) / 0.25, 2));
+        // Shelf at 10 kHz (+1.0 dB)
+        if (freq > 7000) {
+          gain += 1.0 * Math.min(1, (freq - 7000) / 4000);
+        }
+
+        const y = dbToY(gain, zeroY, height);
+        if (px === 40) ctx.moveTo(px, y);
+        else ctx.lineTo(px, y);
+      }
+      ctx.stroke();
+
+      // Draw Key control points
+      drawPoint(ctx, freqToX(150, width), dbToY(-3, zeroY, height), "#f59e0b", "HPF 150Hz");
+      drawPoint(ctx, freqToX(250, width), dbToY(-3, zeroY, height), "#f43f5e", "250Hz -3dB (Barro)");
+      drawPoint(ctx, freqToX(3000, width), dbToY(-2, zeroY, height), "#f43f5e", "3kHz -2dB (Espacio Líder)");
+      drawPoint(ctx, freqToX(10000, width), dbToY(1, zeroY, height), "#f59e0b", "10kHz +1dB");
+    }
+
+    // Draw Guitar Curve
+    function drawGuitarCurve() {
+      const setup = initCanvas('canvasGuitar');
+      if (!setup) return;
+      const { ctx, width, height, zeroY } = setup;
+
+      ctx.beginPath();
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = "#f59e0b";
+
+      for (let px = 40; px < width - 15; px++) {
+        const ratio = (px - 40) / (width - 55);
+        const freq = Math.pow(10, Math.log10(20) + ratio * (Math.log10(20000) - Math.log10(20)));
+
+        let gain = 0;
+        // HPF around 95 Hz
+        if (freq < 95) {
+          gain -= Math.min(15, Math.pow(95 / freq, 2) * 3);
+        }
+        // Palm mute dip 250 Hz
+        gain += -3.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(250)) / 0.22, 2));
+        // Mid body boost 1 kHz
+        gain += 1.8 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(1000)) / 0.3, 2));
+        // Harshness dip 3.8 kHz
+        gain += -2.2 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(3800)) / 0.15, 2));
+        // High Cut LPF above 6.8 kHz
+        if (freq > 6800) {
+          gain -= Math.min(15, Math.pow(freq / 6800, 2) * 3);
+        }
+
+        const y = dbToY(gain, zeroY, height);
+        if (px === 40) ctx.moveTo(px, y);
+        else ctx.lineTo(px, y);
+      }
+      ctx.stroke();
+
+      drawPoint(ctx, freqToX(95, width), dbToY(-3, zeroY, height), "#f59e0b", "HPF 95Hz");
+      drawPoint(ctx, freqToX(250, width), dbToY(-3, zeroY, height), "#f43f5e", "-3dB @ 250Hz");
+      drawPoint(ctx, freqToX(1000, width), dbToY(1.8, zeroY, height), "#10b981", "+1.8dB @ 1kHz");
+      drawPoint(ctx, freqToX(3800, width), dbToY(-2.2, zeroY, height), "#f43f5e", "-2.2dB @ 3.8kHz");
+      drawPoint(ctx, freqToX(6800, width), dbToY(-3, zeroY, height), "#f59e0b", "LPF 6.8kHz (Anti-avispa)");
+    }
+
+    // Draw Bass Curve
+    function drawBassCurve() {
+      const setup = initCanvas('canvasBass');
+      if (!setup) return;
+      const { ctx, width, height, zeroY } = setup;
+
+      ctx.beginPath();
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = "#06b6d4";
+
+      for (let px = 40; px < width - 15; px++) {
+        const ratio = (px - 40) / (width - 55);
+        const freq = Math.pow(10, Math.log10(20) + ratio * (Math.log10(20000) - Math.log10(20)));
+
+        let gain = 0;
+        // HPF around 40 Hz
+        if (freq < 40) {
+          gain -= Math.min(15, Math.pow(40 / freq, 2) * 3);
+        }
+        // Kick clearance hole at 65 Hz
+        gain += -3.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(65)) / 0.18, 2));
+        // Bass note punch at 115 Hz
+        gain += 2.5 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(115)) / 0.22, 2));
+        // Mud cut at 450 Hz
+        gain += -3.0 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(450)) / 0.25, 2));
+        // Attack clank at 2.5 kHz
+        gain += 3.2 * Math.exp(-Math.pow((Math.log10(freq) - Math.log10(2500)) / 0.22, 2));
+        // LPF drop at 5.5 kHz
+        if (freq > 5500) {
+          gain -= Math.min(15, Math.pow(freq / 5500, 2) * 2.5);
+        }
+
+        const y = dbToY(gain, zeroY, height);
+        if (px === 40) ctx.moveTo(px, y);
+        else ctx.lineTo(px, y);
+      }
+      ctx.stroke();
+
+      drawPoint(ctx, freqToX(40, width), dbToY(-3, zeroY, height), "#06b6d4", "HPF 40Hz");
+      drawPoint(ctx, freqToX(65, width), dbToY(-3, zeroY, height), "#f43f5e", "Hueco Bombo 65Hz");
+      drawPoint(ctx, freqToX(115, width), dbToY(2.5, zeroY, height), "#10b981", "Peso Bajo 115Hz");
+      drawPoint(ctx, freqToX(450, width), dbToY(-3, zeroY, height), "#f43f5e", "Corte Caja 450Hz");
+      drawPoint(ctx, freqToX(2500, width), dbToY(3.2, zeroY, height), "#06b6d4", "Ataque Steve Harris 2.5k");
+    }
+
+    function drawPoint(ctx, x, y, color, text) {
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, 4, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = "#cbd5e1";
+      ctx.font = "10px monospace";
+      ctx.fillText(text, x - 25, y > 115 ? y - 9 : y + 16);
+    }
+
+    // Initialize default view
+    window.onload = function() {
+      drawVoiceLead();
+    };
+  </script>
+</body>
+</html>
