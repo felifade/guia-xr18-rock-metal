@@ -138,6 +138,20 @@
           <div class="text-[10px] text-slate-400">Fuel • Fade To Black • Wherever</div>
         </div>
       </button>
+
+      <span class="text-[10px] font-bold text-emerald-400/90 uppercase tracking-widest px-3 block pt-3 mb-1">Mi Arsenal & Cuerdas</span>
+
+      <!-- Mi Kit, Guitarras & Cambio de Cuerdas -->
+      <button onclick="navigate('gear')" id="nav-gear" class="nav-btn w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all text-slate-300 hover:bg-slate-800/80 border border-emerald-500/30 bg-emerald-500/5">
+        <span class="text-base">🎸</span>
+        <div class="flex-1">
+          <div class="font-bold text-emerald-300 flex items-center justify-between">
+            <span>Mi Kit & Cuerdas</span>
+            <span id="sidebar-gear-badge" class="text-[9px] bg-rose-500/20 text-rose-300 border border-rose-500/40 px-1.5 py-0.5 rounded-full font-mono">2 Pend.</span>
+          </div>
+          <div class="text-[10px] text-slate-400">5 Guitarras • Bocina In-Ear • PA</div>
+        </div>
+      </button>
     </div>
 
     <!-- Live Quick Status -->
@@ -872,6 +886,123 @@
       </div>
     </section>
 
+    <!-- ======================================================== -->
+    <!-- SECTION 8: MI KIT MUSICAL, GUITARRAS & CAMBIO DE CUERDAS -->
+    <!-- ======================================================== -->
+    <section id="section-gear" class="section-content hidden space-y-6">
+      <!-- Top Hero / KPIs -->
+      <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/30 border border-emerald-500/30 rounded-2xl p-5 md:p-6 shadow-xl space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/80 pb-4">
+          <div>
+            <div class="inline-flex items-center gap-1.5 text-[11px] text-emerald-400 font-mono font-semibold">
+              <span>🎸</span> DASHBOARD DE INSTRUMENTOS, MANTENIMIENTO & MONITOREO PERSONAL
+            </div>
+            <h2 class="text-2xl md:text-3xl font-black text-white mt-0.5">Mi Arsenal Musical & Control de Cuerdas</h2>
+            <p class="text-xs text-slate-300 mt-1">
+              Seguimiento inteligente de cambio de cuerdas con alertas automáticas, calendario <code class="text-amber-300">.ics</code> para iPhone/Mac e inventario completo de tu Kit.
+            </p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="resetDefaultGearData()" class="px-3 py-1.5 rounded-xl text-[11px] font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">
+              ↺ Restaurar Datos Base
+            </button>
+          </div>
+        </div>
+
+        <!-- KPI Summary Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div class="bg-slate-950/90 border border-slate-800 rounded-xl p-3.5">
+            <div class="text-[10px] font-mono uppercase text-slate-400">Guitarras en Arsenal</div>
+            <div id="kpi-total-guitars" class="text-2xl font-black text-white mt-0.5">5</div>
+            <div class="text-[11px] text-slate-400">3 Eléctricas • 2 Acústicas</div>
+          </div>
+          <div class="bg-slate-950/90 border border-emerald-500/30 rounded-xl p-3.5">
+            <div class="text-[10px] font-mono uppercase text-emerald-400">Cuerdas al 100%</div>
+            <div id="kpi-ok-guitars" class="text-2xl font-black text-emerald-400 mt-0.5">3</div>
+            <div class="text-[11px] text-slate-400">Eléctricas listas para tocar</div>
+          </div>
+          <div class="bg-slate-950/90 border border-rose-500/40 rounded-xl p-3.5">
+            <div class="text-[10px] font-mono uppercase text-rose-400">Cambio Pendiente / Revisar</div>
+            <div id="kpi-due-guitars" class="text-2xl font-black text-rose-400 mt-0.5">2</div>
+            <div class="text-[11px] text-rose-300">Yamaha Nylon + Takamine</div>
+          </div>
+          <div class="bg-slate-950/90 border border-amber-500/30 rounded-xl p-3.5">
+            <div class="text-[10px] font-mono uppercase text-amber-400">Kit Audio & PA</div>
+            <div id="kpi-total-gear" class="text-2xl font-black text-amber-400 mt-0.5">7</div>
+            <div class="text-[11px] text-slate-400">Incluye Bocina Monitor Nueva</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GUITAR STRING TRACKER -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+          <div>
+            <h3 class="text-lg font-black text-white flex items-center gap-2">
+              <span>⏱️</span> Seguimiento y Programación de Cambio de Cuerdas
+            </h3>
+            <p class="text-xs text-slate-400">
+              Cambia la fecha, el modelo o el ciclo de días y se guarda automáticamente en este dispositivo. Usa <strong>"📅 Agendar en iPhone/Mac"</strong> para crear la alerta en tu Calendario.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dynamic Guitar Cards Container -->
+        <div id="guitars-container" class="grid grid-cols-1 gap-4">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Takamine Special Advisory Box -->
+        <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 space-y-2">
+          <div class="flex items-center justify-between">
+            <h4 class="text-xs font-bold text-amber-300 uppercase flex items-center gap-2">
+              <span>💡</span> Regla de Oro para tu Guitarra Takamine (Aunque casi no la toques)
+            </h4>
+            <span class="text-[10px] font-mono bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded">Mantenimiento Acústica</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            • <strong>¿Por qué cambiar cuerdas si casi no la tocas?</strong> Las cuerdas acústicas de bronce/fósforo sin recubrimiento se oxidan con la pura humedad del aire en <strong>4 a 6 meses</strong>, pierden armónicos y pueden manchar los trastes. Además, mantienen ~75 kg de tensión sobre el puente.
+            <br>
+            • <strong>¿Cuándo te conviene cambiarlas?</strong> Si aún trae las cuerdas de cuando la compraste (más de 6 meses), <strong>cámbiaselas en cuanto puedas por unas recubiertas: <em>Elixir Nanoweb Phosphor Bronze (.011–.052 o .012–.053)</em></strong>. Con esas cuerdas recubiertas y guardada en su estuche, te durarán <strong>hasta 1 año completo (12 meses)</strong> sonando brillantes como el primer día.
+          </p>
+        </div>
+      </div>
+
+      <!-- KIT & AUDIO GEAR INVENTORY (BOCINA IN-EAR, XR18, JBL, SUBS, AMPS) -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+          <div>
+            <h3 class="text-lg font-black text-white flex items-center gap-2">
+              <span>🔊</span> Mi Kit de Audio, Monitoreo (In-Ear / Bocina Nueva) & Backline
+            </h3>
+            <p class="text-xs text-slate-400">
+              Registro de tu equipo de escenario, monitoreo personal aconsejado y sistema P.A. Puedes editar el modelo exacto o agregar notas en cualquier tarjeta.
+            </p>
+          </div>
+        </div>
+
+        <div id="kit-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Add New Gear Item Form -->
+        <div class="bg-slate-950/90 border border-slate-800 rounded-xl p-4 space-y-3">
+          <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-wider">➕ Agregar Nuevo Equipo / Guitarra / Accesorio al Dashboard</h4>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs">
+            <input id="new-gear-name" type="text" placeholder="Nombre (ej. Pedal / Micrófono / Guitarra)" class="bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400">
+            <input id="new-gear-model" type="text" placeholder="Marca / Modelo / Calibre" class="bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400">
+            <select id="new-gear-type" class="bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400">
+              <option value="guitar">🎸 Guitarra (con control de cuerdas)</option>
+              <option value="kit">🔊 Equipo de Audio / Monitoreo / Backline</option>
+            </select>
+            <button onclick="addNewCustomItem()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg px-4 py-2 transition">
+              Guardar en Mi Kit
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- JAVASCRIPT LOGIC & CANVAS DRAWING -->
@@ -905,6 +1036,7 @@
       if (sectionId === 'fer') setTimeout(drawFerCurve, 50);
       if (sectionId === 'bateria') setTimeout(() => setDrumView('kick'), 50);
       if (sectionId === 'estudio3d') setTimeout(() => setEstudio3DView('v30'), 50);
+      if (sectionId === 'gear') setTimeout(renderGearDashboard, 30);
     }
 
     function toggleMobileMenu() {
@@ -1410,6 +1542,510 @@
         drawPoint(ctx, freqToX(3900, width), dbToY(4, zeroY, height), "#10b981", "+4dB 3.9kHz (Click)");
       }
     }
+
+    // =========================================================================
+    // MI ARSENAL MUSICAL, SEGUIMIENTO DE CUERDAS E INVENTARIO DE GEAR
+    // =========================================================================
+    const STORAGE_KEY_GUITARS = 'militia_phil_guitars_v1';
+    const STORAGE_KEY_KIT = 'militia_phil_kit_v1';
+
+    const DEFAULT_GUITARS = [
+      {
+        id: 'g-negra-main',
+        name: 'Guitarra Eléctrica Negra (Titular Principal)',
+        model: 'Eléctrica Principal (En Vivo / Grabación) — Modelo por especificar',
+        strings: 'Elixir Nanoweb / Super Light (.009 - .042)',
+        role: '🎸 Titular En Vivo & Estudio (Ch 4 NAM)',
+        lastChange: '2026-11-07',
+        cycleDays: 60,
+        statusOverride: null,
+        notes: 'Cuerdas cambiadas el 7 de noviembre de 2026. Guitarra de mayor uso en tocadas y grabaciones.'
+      },
+      {
+        id: 'g-azul-ibanez',
+        name: 'Guitarra Eléctrica Azul Ibanez (Ensayos)',
+        model: 'Ibanez Azul (Modelo por especificar)',
+        strings: 'Nickel Wound / Elixir (.009 - .042)',
+        role: '⚡ Guitarra de Ensayo y Práctica',
+        lastChange: '2026-11-07',
+        cycleDays: 65,
+        statusOverride: null,
+        notes: 'Cambiadas el sábado de la semana pasada (7 nov / 14 nov). Lista para ensayos intensivos.'
+      },
+      {
+        id: 'g-negra-ibanez',
+        name: 'Guitarra Eléctrica Negra Ibanez',
+        model: 'Ibanez Negra (Modelo por especificar)',
+        strings: 'Nickel Wound / Elixir (.009 - .042)',
+        role: '🔥 Segunda Eléctrica / Alterna',
+        lastChange: '2026-11-16',
+        cycleDays: 90,
+        statusOverride: null,
+        notes: '¡Recién encordada ayer (16 de noviembre de 2026)! Cuerdas nuevas al 100%.'
+      },
+      {
+        id: 'g-yamaha-nylon',
+        name: 'Guitarra Acústica Yamaha (Cuerdas de Nylon)',
+        model: 'Yamaha Clásica / Acústica de Nylon',
+        strings: 'Nylon Tensión Normal/Alta (D\'Addario Pro-Arte EJ45 / EJ46)',
+        role: '🎼 Acústica de Nylon (Estudio / Casa)',
+        lastChange: '',
+        cycleDays: 150,
+        statusOverride: 'pending',
+        notes: '⚠️ PENDIENTE DE CAMBIO: No se le han cambiado las cuerdas recientemente. En cuanto las cambies, pulsa "✓ Cambié cuerdas HOY".'
+      },
+      {
+        id: 'g-takamine',
+        name: 'Guitarra Electroacústica Takamine',
+        model: 'Takamine Acústica / Electroacústica (Cuerdas de Acero/Bronce)',
+        strings: 'Recomendado: Elixir Nanoweb Phosphor Bronze (.011 - .052)',
+        role: '✨ Acústica de Acero (Uso Ocasional / Baladas)',
+        lastChange: '2026-05-15',
+        cycleDays: 180,
+        statusOverride: 'check_age',
+        notes: 'Aunque casi no se toca, la humedad oxida el bronce normal en 6 meses. Pon la fecha exacta de compra o cámbialas a Elixir recubiertas para que duren 12 meses intactas.'
+      }
+    ];
+
+    const DEFAULT_KIT = [
+      {
+        id: 'k-bocina-inear',
+        icon: '🎧',
+        category: 'Monitoreo Personal / In-Ear',
+        name: 'Bocina / Monitor Personal de Escenario (Recién Comprada)',
+        model: 'Recomendación para Monitoreo Personal / Referencia In-Ear (Click para anotar modelo exacto)',
+        routing: 'Conectada a Salida Auxiliar Bus 5 / Bus 6 (Estéreo Phil)',
+        dateInfo: 'Adquirida en Noviembre 2026',
+        notes: 'Tu monitor personal recién comprado por nuestra recomendación para escucharte con total definición (Guitarra NAM Ch 4 + Voz Ch 6 + mezcla estéreo).'
+      },
+      {
+        id: 'k-xr18',
+        icon: '🎛️',
+        category: 'Consola Digital & Interfaz USB',
+        name: 'Behringer X-Air XR18',
+        model: 'Mezcladora Digital 18 Canales + Interfaz USB 18x18',
+        routing: 'Cerebro de PA y Monitoreo (Buses 1/3 Marco, Bus 2 Poncho, Bus 4 Subs, Bus 5/6 Phil)',
+        dateInfo: 'Activa en Rack Principal',
+        notes: 'Control vía iPad/Mac. 10 canales activos en vivo y envío de subwoofers separado por Bus 4.'
+      },
+      {
+        id: 'k-nam',
+        icon: '⚡',
+        category: 'Modelado de Amplificadores',
+        name: 'Sistema Neural Amp Modeler (NAM) & Presets Metal',
+        model: 'Perfiles High-Gain (Mesa Boogie / Marshall + Gabinete V30)',
+        routing: 'Entrada directa a CH 04 de la XR18 (Paneo L 65%)',
+        dateInfo: 'Calibrado con filtro LPF 6.8 kHz',
+        notes: 'Sonido principal de guitarra de Phil para Metallica, Iron Maiden y Rock Clásico.'
+      },
+      {
+        id: 'k-jbl',
+        icon: '🔊',
+        category: 'P.A. Tops Principales',
+        name: 'Par de Bocinas Activas JBL EON615 (15" 1000W)',
+        model: 'JBL Professional EON615 — 2 Vías Power Loudspeaker (Serie P1391-111828)',
+        routing: 'Salidas Main L y Main R de la XR18 (Con corte HPF @ 85-90 Hz)',
+        dateInfo: 'Factura Music Club: 07/Ene/2018 ($9,910 c/u)',
+        notes: 'Reproducen voces, guitarras y medios/agudos con total claridad al estar libres de subgraves.'
+      },
+      {
+        id: 'k-subs',
+        icon: '💣',
+        category: 'Subwoofers P.A.',
+        name: 'Par de Subwoofers Activos de 18" (En Cadena)',
+        model: 'Subwoofers 18" en Daisy-Chain (Input Sub 1 ➔ Thru/Link Sub 2)',
+        routing: 'Salida Aux 4 (Bus 4) — Reciben SOLO Bombo (Ch 8) y Bajo (Ch 7)',
+        dateInfo: 'Configuración Anti-Acople',
+        notes: 'Concentran el 100% de su potencia en el golpe de bombo de Marco (60 Hz) y el bajo de Fer (85-120 Hz).'
+      },
+      {
+        id: 'k-vox',
+        icon: '📻',
+        category: 'Amplificador de Guitarra',
+        name: 'Amplificador VOX AV60 (Analog Valve)',
+        model: 'VOX Serie AV 60W con Bulbo Pre/Power (Serie 002438)',
+        routing: 'Backline / Práctica / Ensayo',
+        dateInfo: 'Factura Music Club: 07/Ene/2018 ($9,330)',
+        notes: 'Amplificador híbrido con 8 circuitos analógicos de preamplificación.'
+      },
+      {
+        id: 'k-bass-amp',
+        icon: '🎸',
+        category: 'Amplificación de Bajo & Cuerdas Stock',
+        name: 'Amplificador para Bajo 500W + Stock Cuerdas Elixir',
+        model: 'Combo Bajo 500W (Clave 3612300) + Packs Elixir Nanoweb .009-.042',
+        routing: 'Monitoreo de escenario para Bajo (Ch 7)',
+        dateInfo: 'Factura Music Club: 02/Dic/2017',
+        notes: 'Respaldo de escenario en conjunto con envío directo a Bus 4.'
+      }
+    ];
+
+    function loadGuitars() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_GUITARS);
+        return raw ? JSON.parse(raw) : JSON.parse(JSON.stringify(DEFAULT_GUITARS));
+      } catch (e) {
+        return JSON.parse(JSON.stringify(DEFAULT_GUITARS));
+      }
+    }
+
+    function saveGuitars(list) {
+      localStorage.setItem(STORAGE_KEY_GUITARS, JSON.stringify(list));
+      renderGearDashboard();
+    }
+
+    function loadKit() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_KIT);
+        return raw ? JSON.parse(raw) : JSON.parse(JSON.stringify(DEFAULT_KIT));
+      } catch (e) {
+        return JSON.parse(JSON.stringify(DEFAULT_KIT));
+      }
+    }
+
+    function saveKit(list) {
+      localStorage.setItem(STORAGE_KEY_KIT, JSON.stringify(list));
+      renderGearDashboard();
+    }
+
+    function resetDefaultGearData() {
+      localStorage.removeItem(STORAGE_KEY_GUITARS);
+      localStorage.removeItem(STORAGE_KEY_KIT);
+      renderGearDashboard();
+    }
+
+    function formatDateES(dateStr) {
+      if (!dateStr) return 'Sin fecha registrada';
+      const parts = dateStr.split('-');
+      if (parts.length !== 3) return dateStr;
+      const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+      const y = parseInt(parts[0], 10);
+      const m = parseInt(parts[1], 10) - 1;
+      const d = parseInt(parts[2], 10);
+      return `${d < 10 ? '0' + d : d}/${months[m] || parts[1]}/${y}`;
+    }
+
+    function addDays(dateStr, days) {
+      const parts = dateStr.split('-');
+      const dt = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+      dt.setDate(dt.getDate() + Number(days));
+      const y = dt.getFullYear();
+      const m = String(dt.getMonth() + 1).padStart(2, '0');
+      const d = String(dt.getDate()).padStart(2, '0');
+      return `${y}-${m}-${d}`;
+    }
+
+    function computeGuitarStatus(g) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      if (!g.lastChange || g.statusOverride === 'pending') {
+        return {
+          state: 'due',
+          badgeText: '🔴 CAMBIO PENDIENTE HOY',
+          badgeClass: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
+          borderClass: 'border-rose-500/50 bg-rose-950/10',
+          daysElapsed: null,
+          daysRemaining: 0,
+          nextDateStr: null,
+          progressPct: 100,
+          barColor: 'bg-rose-500'
+        };
+      }
+
+      const parts = g.lastChange.split('-');
+      const lastDt = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+      const diffMs = today - lastDt;
+      const daysElapsed = Math.max(0, Math.round(diffMs / (1000 * 60 * 60 * 24)));
+      const cycle = Number(g.cycleDays) || 60;
+      const daysRemaining = cycle - daysElapsed;
+      const nextDateStr = addDays(g.lastChange, cycle);
+      const progressPct = Math.min(100, Math.max(5, Math.round((daysElapsed / cycle) * 100)));
+
+      if (daysRemaining <= 0) {
+        return {
+          state: 'due',
+          badgeText: `🔴 TOCA CAMBIO (${Math.abs(daysRemaining)}d vencido)`,
+          badgeClass: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
+          borderClass: 'border-rose-500/50 bg-rose-950/10',
+          daysElapsed,
+          daysRemaining,
+          nextDateStr,
+          progressPct: 100,
+          barColor: 'bg-rose-500'
+        };
+      } else if (daysRemaining <= 15 || g.statusOverride === 'check_age') {
+        return {
+          state: 'soon',
+          badgeText: `🟡 PRÓXIMO CAMBIO EN ${daysRemaining} DÍAS`,
+          badgeClass: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+          borderClass: 'border-amber-500/40',
+          daysElapsed,
+          daysRemaining,
+          nextDateStr,
+          progressPct,
+          barColor: 'bg-amber-500'
+        };
+      } else {
+        return {
+          state: 'ok',
+          badgeText: `🟢 ÓPTIMA (${daysRemaining} días restantes)`,
+          badgeClass: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+          borderClass: 'border-slate-800',
+          daysElapsed,
+          daysRemaining,
+          nextDateStr,
+          progressPct,
+          barColor: 'bg-emerald-500'
+        };
+      }
+    }
+
+    function markChangedToday(index) {
+      const guitars = loadGuitars();
+      const now = new Date();
+      const y = now.getFullYear();
+      const m = String(now.getMonth() + 1).padStart(2, '0');
+      const d = String(now.getDate()).padStart(2, '0');
+      guitars[index].lastChange = `${y}-${m}-${d}`;
+      guitars[index].statusOverride = null;
+      saveGuitars(guitars);
+    }
+
+    function updateGuitarField(index, field, value) {
+      const guitars = loadGuitars();
+      guitars[index][field] = field === 'cycleDays' ? Number(value) : value;
+      if (field === 'lastChange' && value) {
+        guitars[index].statusOverride = null;
+      }
+      saveGuitars(guitars);
+    }
+
+    function updateKitField(index, field, value) {
+      const kit = loadKit();
+      kit[index][field] = value;
+      saveKit(kit);
+    }
+
+    function downloadCalendarICS(index) {
+      const guitars = loadGuitars();
+      const g = guitars[index];
+      const st = computeGuitarStatus(g);
+      const targetDate = st.nextDateStr || (() => {
+        const now = new Date();
+        return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+      })();
+      const cleanDate = targetDate.replace(/-/g, '');
+      const icsContent = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Militia Inc//Gear Tracker//ES',
+        'BEGIN:VEVENT',
+        `DTSTART;VALUE=DATE:${cleanDate}`,
+        `DTEND;VALUE=DATE:${cleanDate}`,
+        `SUMMARY:🎸 Cambio de Cuerdas: ${g.name}`,
+        `DESCRIPTION:Calibre sugerido: ${g.strings}. Modelo: ${g.model}. Notas: ${g.notes}`,
+        'BEGIN:VALARM',
+        'TRIGGER:-PT9H',
+        'ACTION:DISPLAY',
+        'DESCRIPTION:Recordatorio Cambio de Cuerdas Militia Inc.',
+        'END:VALARM',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Cambio_Cuerdas_${g.id}.ics`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function addNewCustomItem() {
+      const nameEl = document.getElementById('new-gear-name');
+      const modelEl = document.getElementById('new-gear-model');
+      const typeEl = document.getElementById('new-gear-type');
+      const name = (nameEl.value || '').trim();
+      const model = (modelEl.value || '').trim();
+      if (!name) return;
+
+      if (typeEl.value === 'guitar') {
+        const guitars = loadGuitars();
+        const now = new Date();
+        const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+        guitars.push({
+          id: 'g-custom-' + Date.now(),
+          name,
+          model: model || 'Modelo personalizado',
+          strings: '.009 - .042',
+          role: '🎸 Guitarra Adicional',
+          lastChange: todayStr,
+          cycleDays: 90,
+          statusOverride: null,
+          notes: 'Agregada desde el Dashboard.'
+        });
+        saveGuitars(guitars);
+      } else {
+        const kit = loadKit();
+        kit.unshift({
+          id: 'k-custom-' + Date.now(),
+          icon: '🔥',
+          category: 'Equipo / Accesorio',
+          name,
+          model: model || 'Especificación personalizada',
+          routing: 'Configurado en Set Live / Estudio',
+          dateInfo: 'Registrado en Dashboard',
+          notes: 'Haz clic en cualquier texto para editar detalles.'
+        });
+        saveKit(kit);
+      }
+      nameEl.value = '';
+      modelEl.value = '';
+    }
+
+    function renderGearDashboard() {
+      const guitars = loadGuitars();
+      const kit = loadKit();
+      const gContainer = document.getElementById('guitars-container');
+      const kContainer = document.getElementById('kit-container');
+      if (!gContainer || !kContainer) return;
+
+      let okCount = 0;
+      let dueCount = 0;
+
+      gContainer.innerHTML = guitars.map((g, idx) => {
+        const st = computeGuitarStatus(g);
+        if (st.state === 'ok') okCount++;
+        else dueCount++;
+
+        return `
+          <div class="bg-slate-950 border ${st.borderClass} rounded-2xl p-4 md:p-5 transition-all space-y-3">
+            <div class="flex flex-wrap items-start justify-between gap-2">
+              <div class="space-y-0.5">
+                <div class="text-[11px] font-mono text-amber-400">${g.role}</div>
+                <h4 class="text-base md:text-lg font-black text-white">${g.name}</h4>
+              </div>
+              <span class="text-[11px] font-mono font-bold border px-2.5 py-1 rounded-full ${st.badgeClass}">
+                ${st.badgeText}
+              </span>
+            </div>
+
+            <!-- Progress bar of string life -->
+            <div class="space-y-1">
+              <div class="flex justify-between text-[11px] font-mono">
+                <span class="text-slate-400">
+                  Último cambio: <strong class="text-white">${formatDateES(g.lastChange)}</strong>
+                  ${st.daysElapsed !== null ? ` (hace ${st.daysElapsed} días)` : ''}
+                </span>
+                <span class="text-amber-300">
+                  Próximo cambio: <strong>${st.nextDateStr ? formatDateES(st.nextDateStr) : '¡Lo antes posible!'}</strong>
+                </span>
+              </div>
+              <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+                <div class="h-full ${st.barColor} transition-all" style="width: ${st.progressPct}%"></div>
+              </div>
+            </div>
+
+            <!-- Editable Controls Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-2.5 pt-1 text-xs">
+              <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-2.5">
+                <label class="block text-[10px] font-mono uppercase text-slate-400 mb-1">Modelo Exacto (Editable)</label>
+                <input type="text" value="${g.model.replace(/"/g, '&quot;')}"
+                  onchange="updateGuitarField(${idx}, 'model', this.value)"
+                  class="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1 text-slate-200 text-xs focus:outline-none focus:border-amber-400">
+              </div>
+              <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-2.5">
+                <label class="block text-[10px] font-mono uppercase text-slate-400 mb-1">Cuerdas / Calibre</label>
+                <input type="text" value="${g.strings.replace(/"/g, '&quot;')}"
+                  onchange="updateGuitarField(${idx}, 'strings', this.value)"
+                  class="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1 text-slate-200 text-xs focus:outline-none focus:border-amber-400">
+              </div>
+              <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-2.5">
+                <label class="block text-[10px] font-mono uppercase text-slate-400 mb-1">Fecha Último Cambio</label>
+                <input type="date" value="${g.lastChange}"
+                  onchange="updateGuitarField(${idx}, 'lastChange', this.value)"
+                  class="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1 text-amber-300 font-mono text-xs focus:outline-none focus:border-amber-400">
+              </div>
+              <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-2.5">
+                <label class="block text-[10px] font-mono uppercase text-slate-400 mb-1">Programar Cada (Días)</label>
+                <select onchange="updateGuitarField(${idx}, 'cycleDays', this.value)"
+                  class="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1 text-emerald-300 font-mono text-xs focus:outline-none focus:border-amber-400">
+                  <option value="45" ${g.cycleDays == 45 ? 'selected' : ''}>45 días (Uso intensivo)</option>
+                  <option value="60" ${g.cycleDays == 60 ? 'selected' : ''}>60 días (2 meses - Show)</option>
+                  <option value="65" ${g.cycleDays == 65 ? 'selected' : ''}>65 días (~2 meses - Ensayo)</option>
+                  <option value="90" ${g.cycleDays == 90 ? 'selected' : ''}>90 días (3 meses - Elixir)</option>
+                  <option value="150" ${g.cycleDays == 150 ? 'selected' : ''}>150 días (5 meses - Nylon)</option>
+                  <option value="180" ${g.cycleDays == 180 ? 'selected' : ''}>180 días (6 meses - Poco uso)</option>
+                  <option value="365" ${g.cycleDays == 365 ? 'selected' : ''}>365 días (1 año - Acústica Elixir)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-2 pt-1 text-xs">
+              <p class="text-slate-400 text-[11px] flex-1">${g.notes}</p>
+              <div class="flex flex-wrap gap-2">
+                <button onclick="markChangedToday(${idx})"
+                  class="px-3 py-1.5 rounded-lg bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border border-emerald-500/40 font-semibold text-[11px] transition">
+                  ✓ Cambié cuerdas HOY
+                </button>
+                <button onclick="downloadCalendarICS(${idx})"
+                  class="px-3 py-1.5 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 font-semibold text-[11px] transition">
+                  📅 Agendar Alerta iPhone/Mac
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      kContainer.innerHTML = kit.map((item, idx) => `
+        <div class="bg-slate-950 border ${idx === 0 ? 'border-emerald-500/50 bg-emerald-950/10' : 'border-slate-800'} rounded-2xl p-4 space-y-2.5 flex flex-col justify-between">
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded ${idx === 0 ? 'bg-emerald-500/20 text-emerald-300 font-bold' : 'bg-slate-900 text-amber-400'}">
+                ${item.icon} ${item.category}
+              </span>
+              <span class="text-[10px] font-mono text-slate-500">${item.dateInfo}</span>
+            </div>
+            <h4 class="text-sm font-black text-white">${item.name}</h4>
+            <div>
+              <label class="block text-[10px] font-mono text-slate-500">Modelo / Especificación (Editable):</label>
+              <input type="text" value="${item.model.replace(/"/g, '&quot;')}"
+                onchange="updateKitField(${idx}, 'model', this.value)"
+                class="w-full mt-0.5 bg-slate-900 border border-slate-800 rounded px-2.5 py-1 text-xs text-amber-300 font-mono focus:outline-none focus:border-amber-400">
+            </div>
+            <div class="text-[11px] text-cyan-300 font-mono">🔌 ${item.routing}</div>
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed border-t border-slate-900 pt-2">${item.notes}</p>
+        </div>
+      `).join('');
+
+      const totalGEl = document.getElementById('kpi-total-guitars');
+      const okGEl = document.getElementById('kpi-ok-guitars');
+      const dueGEl = document.getElementById('kpi-due-guitars');
+      const totalKEl = document.getElementById('kpi-total-gear');
+      const badgeEl = document.getElementById('sidebar-gear-badge');
+
+      if (totalGEl) totalGEl.innerText = guitars.length;
+      if (okGEl) okGEl.innerText = okCount;
+      if (dueGEl) dueGEl.innerText = dueCount;
+      if (totalKEl) totalKEl.innerText = kit.length;
+      if (badgeEl) {
+        badgeEl.innerText = dueCount > 0 ? `${dueCount} Pend.` : 'Al 100%';
+        badgeEl.className = dueCount > 0
+          ? 'text-[9px] bg-rose-500/20 text-rose-300 border border-rose-500/40 px-1.5 py-0.5 rounded-full font-mono'
+          : 'text-[9px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-1.5 py-0.5 rounded-full font-mono';
+      }
+    }
+
+    // Initialize sidebar badge on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderGearDashboard();
+    });
   </script>
 </body>
 </html>
